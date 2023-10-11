@@ -1,0 +1,10 @@
+digraph C {
+
+    Google -> Meta -> Ford
+    Google -> NXP -> BostonDynamics
+    Google -> Tesla -> Asus
+
+    Meta -> BostonDynamics -> Razer
+    NXP -> Asus -> Razer
+    Tesla -> Ford -> Razer
+}

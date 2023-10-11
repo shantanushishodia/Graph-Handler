@@ -1,11 +1,19 @@
 package org.example;
 
 
+import com.mxgraph.layout.mxCircleLayout;
+import com.mxgraph.layout.mxIGraphLayout;
+import com.mxgraph.util.mxCellRenderer;
 import org.jgrapht.Graph;
+import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleDirectedGraph;
+import org.jgrapht.nio.dot.DOTExporter;
 import org.jgrapht.nio.dot.DOTImporter;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -145,8 +153,12 @@ public class GraphHandler {
                 System.out.println("\tEdge already present in the graph");
                 return false;
             } else {
-                if (!primaryGraph.containsVertex(initialNode)) primaryGraph.addVertex(initialNode);
-                if (!primaryGraph.containsVertex(targetNode)) primaryGraph.addVertex(targetNode);
+
+                if (!primaryGraph.containsVertex(initialNode))
+                    primaryGraph.addVertex(initialNode);
+                if (!primaryGraph.containsVertex(targetNode))
+                    primaryGraph.addVertex(targetNode);
+
                 primaryGraph.addEdge(initialNode, targetNode);
                 return true;
             }
@@ -156,6 +168,31 @@ public class GraphHandler {
 
     }
 
+    /**
+     * Function for saving the graph in DOT Format
+     *
+     * @param filePath
+     * @throws Exception
+     */
+    public void saveGraphDOT(String filePath) throws Exception {
+        DOTExporter<String, DefaultEdge> graphExporter = new DOTExporter<>();
+        StringWriter writer = new StringWriter();
+        String stringDOT;
+        try {
+
+            graphExporter.setVertexIdProvider(v -> v);
+            graphExporter.exportGraph(primaryGraph, writer);
+            stringDOT = writer.toString();
+        } catch (Exception e) {
+            throw new Exception("DOTString not generated, encountered error", e);
+        }
+        try {
+            Files.write(Paths.get(filePath), stringDOT.getBytes());
+        } catch (IOException e) {
+            throw new IOException("DOT graph not generated, encountered error", e);
+        }
+
+    }
 
 
 }

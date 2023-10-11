@@ -9,6 +9,7 @@ import org.jgrapht.nio.dot.DOTImporter;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -100,6 +101,34 @@ public class GraphHandler {
         }
     }
 
+    /**
+     * function for adding a single node to the graph
+     *
+     * @param label
+     * @throws Exception
+     */
+    public void addOneNode(String label) throws Exception {
+        if (!primaryGraph.containsVertex(label)) {
+            try {
+                primaryGraph.addVertex(label);
+            } catch (Exception e) {
+                throw new Exception("Node not added, encountered error", e);
+            }
+        }
+    }
+
+    /**
+     * Function for adding multiple nodes to the graph
+     * using the addOneNode function repeatedly
+     *
+     * @param labels
+     * @throws Exception
+     */
+    public void addMultipleNodes(ArrayList<String> labels) throws Exception {
+        for (String label : labels) {
+            addOneNode(label);
+        }
+    }
 
 
 

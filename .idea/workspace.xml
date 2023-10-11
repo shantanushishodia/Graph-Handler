@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/companies.dot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +79,14 @@
       <option name="presentableId" value="Default" />
       <updated>1696773025662</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file.">
+      <created>1697066563327</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697066563327</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -99,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file." />
   </component>
 </project>

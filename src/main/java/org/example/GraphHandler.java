@@ -131,4 +131,31 @@ public class GraphHandler {
     }
 
 
+    /**
+     * Function for adding an edge in the graph
+     *
+     * @param initialNode
+     * @param targetNode
+     * @return
+     * @throws Exception
+     */
+    public boolean addEdge(String initialNode, String targetNode) throws Exception {
+        try {
+            if (primaryGraph.containsEdge(initialNode, targetNode)) {
+                System.out.println("\tEdge already present in the graph");
+                return false;
+            } else {
+                if (!primaryGraph.containsVertex(initialNode)) primaryGraph.addVertex(initialNode);
+                if (!primaryGraph.containsVertex(targetNode)) primaryGraph.addVertex(targetNode);
+                primaryGraph.addEdge(initialNode, targetNode);
+                return true;
+            }
+        } catch (Exception e) {
+            throw new Exception("Edge not created, encountered error", e);
+        }
+
+    }
+
+
+
 }

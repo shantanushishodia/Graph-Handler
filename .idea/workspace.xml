@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file.">
+    <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Fixed a wrong switch case numbering">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
@@ -86,7 +86,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697066563327</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented Feature 2 which includes adding a single node and adding multiple nodes at once">
+      <created>1697067404628</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697067404628</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed a wrong switch case numbering">
+      <created>1697067717351</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697067717351</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -105,6 +119,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file." />
+    <MESSAGE value="Implemented Feature 2 which includes adding a single node and adding multiple nodes at once" />
+    <MESSAGE value="Fixed a wrong switch case numbering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a wrong switch case numbering" />
   </component>
 </project>

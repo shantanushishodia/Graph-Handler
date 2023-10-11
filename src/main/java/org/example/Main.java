@@ -30,6 +30,7 @@ public class Main {
                 System.out.println("\t3. Save graph details to a file");
                 System.out.println("\t4. Add single node");
                 System.out.println("\t5. Add multiple nodes");
+                System.out.println("\t6. Add one edge");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {
@@ -53,6 +54,13 @@ public class Main {
                         for(int i=0;i<n;i++)
                             listOfNodes.add(input.next());
                         graphHandler.addMultipleNodes(listOfNodes);
+                        break;
+                    case 6:
+                        System.out.println("\tInput source node for the edge");
+                        String initialNode = input.next();
+                        System.out.println("\tInput target node for the edge");
+                        String targetNode = input.next();
+                        graphHandler.addEdge(initialNode, targetNode);
                         break;
                     case 0:
                         break;

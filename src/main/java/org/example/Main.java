@@ -46,7 +46,7 @@ public class Main {
                         System.out.println("\tInput the name for the node:");
                         graphHandler.addOneNode(input.next());
                         break;
-                    case 6:
+                    case 5:
                         System.out.println("\tEnter the number of nodes you want to add:");
                         int n= input.nextInt();
                         ArrayList<String> listOfNodes = new ArrayList<>();

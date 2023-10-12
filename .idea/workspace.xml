@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Implemented test cases for Feature 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
       <recent name="C:\Users\shant\IdeaProjects\SS_P1\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GraphHandlerTest.testSaveGraphToFile">
+  <component name="RunManager" selected="JUnit.GraphHandlerTest.testAddNodes">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="SS_P1" />
@@ -64,11 +65,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.graphImporter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testAddNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SS_P1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="graphImporter" />
+      <option name="METHOD_NAME" value="testAddNodes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphHandlerTest.testAddOneNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SS_P1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
+      <option name="METHOD_NAME" value="testAddOneNode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,10 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphHandlerTest.testAddNodes" />
+        <item itemvalue="JUnit.GraphHandlerTest.testAddOneNode" />
         <item itemvalue="JUnit.GraphHandlerTest.testSaveGraphToFile" />
         <item itemvalue="JUnit.GraphHandlerTest.testToString" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GraphHandlerTest.graphImporter" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697071629819</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implemented test cases for Feature 1">
+      <created>1697071704167</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697071704167</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">

@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -78,6 +80,38 @@ public class GraphHandlerTest {
         assertEquals(output, expected);
     }
 
+    /**
+     * Function for testing addOneNode functionality
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testAddOneNode() throws Exception {
+        graphHandler.addOneNode("e");
+        System.out.println(graphHandler.toString());
+
+        assertEquals(7, graphHandler.getGraph().vertexSet().size());
+        assertTrue(graphHandler.getGraph().containsVertex("e"));
+    }
+
+    /**
+     * Function for testing addMultipleNodes functionality
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testAddNodes() throws Exception {
+        List<String> labels = new ArrayList<>();
+        labels.add("NASA");
+        labels.add("Citadel");
+        labels.add("Microsoft");
+        graphHandler.addMultipleNodes((ArrayList<String>) labels);
+
+        assertEquals(9, graphHandler.getGraph().vertexSet().size());
+        assertTrue(graphHandler.getGraph().containsVertex("Microsoft"));
+        assertTrue(graphHandler.getGraph().containsVertex("Citadel"));
+        assertTrue(graphHandler.getGraph().containsVertex("NASA"));
+    }
 
 
 

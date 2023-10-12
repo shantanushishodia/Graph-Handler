@@ -195,4 +195,31 @@ public class GraphHandler {
     }
 
 
+    /**
+     * Function for saving the graph in PNG format
+     *
+     * @param filePath
+     * @throws Exception
+     */
+    public void saveGraphPNG(String filePath) throws Exception {
+        JGraphXAdapter<String, DefaultEdge> adapterForGraph = new JGraphXAdapter<String, DefaultEdge>(primaryGraph);
+        mxIGraphLayout layout = new mxCircleLayout(adapterForGraph);
+        try {
+            layout.execute(adapterForGraph.getDefaultParent());
+        } catch (Exception e) {
+            throw new Exception("Graph to image conversion failed, encountered error", e);
+        }
+
+        BufferedImage graphImage = mxCellRenderer.createBufferedImage(adapterForGraph, null, 2, Color.WHITE, true, null);
+        File imgFile = new File(filePath);
+        try {
+            ImageIO.write(graphImage, "PNG", imgFile);
+        } catch (IOException e) {
+            throw new Exception("Image to file write failed, encountered error", e);
+        }
+    }
+
+
+
+
 }

@@ -32,6 +32,7 @@ public class Main {
                 System.out.println("\t5. Add multiple nodes");
                 System.out.println("\t6. Add one edge");
                 System.out.println("\t7. Save graph details in DOT format");
+                System.out.println("\t8. Save graph details in PNG format");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {
@@ -65,6 +66,8 @@ public class Main {
                         break;
                     case 7:
                         graphHandler.saveGraphDOT("src/OutputGraphDOT.dot");
+                    case 8:
+                        graphHandler.saveGraphPNG("src/OutputGraphPNG.png");
                     case 0:
                         break;
                 }

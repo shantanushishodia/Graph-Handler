@@ -65,9 +65,11 @@ public class Main {
                         graphHandler.addEdge(initialNode, targetNode);
                         break;
                     case 7:
-                        graphHandler.saveGraphDOT("src/OutputGraphDOT.dot");
+                        graphHandler.saveGraphDOT("src/expectedGraphDOT.txt");
+                        break;
                     case 8:
                         graphHandler.saveGraphPNG("src/OutputGraphPNG.png");
+                        break;
                     case 0:
                         break;
                 }

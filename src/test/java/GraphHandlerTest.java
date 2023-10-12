@@ -61,7 +61,7 @@ public class GraphHandlerTest {
      * @throws IOException
      */
     @Test
-    public void testToString() throws IOException {
+    public void testToString() throws Exception {
         String expected = Files.readString(Paths.get("src/test/expectedGraphFile.txt"));
         String output = graphHandler.toString();
         assertEquals(output, expected);
@@ -113,6 +113,31 @@ public class GraphHandlerTest {
         assertTrue(graphHandler.getGraph().containsVertex("NASA"));
     }
 
+    /**
+     * Function to test addEdge Functionality
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testAddEdge() throws Exception {
+        graphHandler.addEdge("Google", "Ford");
+        System.out.println(graphHandler.toString());
+
+        assertEquals(6, graphHandler.getGraph().vertexSet().size());
+        assertTrue(graphHandler.getGraph().containsVertex("Google"));
+        assertTrue(graphHandler.getGraph().containsEdge("Google", "Ford"));
+    }
+
+    @Test
+    public void testOutputDOTGraph() throws Exception {
+        String outputDOTFile = "src/outputDOTFile.dot";
+        graphHandler.saveGraphDOT(outputDOTFile);
+
+        String output = Files.readString(Paths.get(outputDOTFile));
+        System.out.println("output: " + outputDOTFile);
+        String expected = Files.readString(Paths.get("src/test/expectedGraphDOT.txt"));
+        assertEquals(expected, output);
+    }
 
 
 

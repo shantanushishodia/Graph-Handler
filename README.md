@@ -3,11 +3,11 @@
 ## GraphHandler
 
 ### Instructions to Run
-- Download the ```GraphHandler.zip``` file from this repository
+- Download the ```cse-464-sshishod.zip``` file from this repository
 - Run ```mvn package```
 - This should run all tests for the project
 - This command will build the project in the ```target``` folder as well
-- Alternatively, unzip ```GraphHandler.zip``` and then open the GraphHandler folder in IntelliJ
+- Alternatively, unzip ```cse-464-sshishod.zip``` and then open the GraphHandler folder in IntelliJ
 
 ### APIs
 - ```void graphImporter(String filePath)``` - import a directed graph in a dot file

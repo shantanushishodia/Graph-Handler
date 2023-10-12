@@ -1,0 +1,7 @@
+digraph {
+    Google -> Meta;
+    Meta -> Ford;
+    Tesla -> NXP;
+    NXP -> Asus;
+    Ford -> Tesla;
+}

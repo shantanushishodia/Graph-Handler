@@ -33,6 +33,16 @@ public class GraphHandler {
     private Graph<String, DefaultEdge> primaryGraph = new SimpleDirectedGraph<>(DefaultEdge.class);
 
     /**
+     * Getter for primaryGraph
+     *
+     * @return
+     */
+    public Graph<String, DefaultEdge> getGraph() {
+        return primaryGraph;
+    }
+
+
+    /**
      * Function for importing a DOT graph file into the system
      *
      * @param filePath
@@ -44,7 +54,7 @@ public class GraphHandler {
             fileData = Files.readString(Paths.get(filePath));
         }
         catch (IOException e){
-            throw new Exception("Error while reading input file",e);
+            throw new Exception("Unable to read file, encountered error",e);
         }
 
         try {

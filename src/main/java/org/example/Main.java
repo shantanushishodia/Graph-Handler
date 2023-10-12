@@ -43,7 +43,7 @@ public class Main {
                         System.out.println(graphHandler.toString());
                         break;
                     case 3:
-                        graphHandler.saveGraphToFile("src/OutputGraphFile.txt");
+                        graphHandler.saveGraphToFile("src/expectedGraphFile.txt");
                         break;
                     case 4:
                         System.out.println("\tInput the name for the node:");

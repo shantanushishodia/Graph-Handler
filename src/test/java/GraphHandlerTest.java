@@ -53,6 +53,11 @@ public class GraphHandlerTest {
 
     }
 
+    /**
+     * Function for testing ToString Functionality
+     *
+     * @throws IOException
+     */
     @Test
     public void testToString() throws IOException {
         String expected = Files.readString(Paths.get("src/test/expectedGraphFile.txt"));
@@ -60,6 +65,11 @@ public class GraphHandlerTest {
         assertEquals(output, expected);
     }
 
+    /**
+     * Function for testing saveGraphToFile functionality
+     *
+     * @throws Exception
+     */
     @Test
     public void testSaveGraphToFile() throws Exception {
         graphHandler.saveGraphToFile("src/testSaveGraphFile.txt");

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Implemented test cases for Feature 3 and Feature 4. Added surefire plugin separately. In-built was not working for maven package">
+    <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Added Readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GraphHandlerTest.testOutputDOTGraph">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="cse-464-sshishod" />
@@ -124,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphHandlerTest.testOutputDOTGraph" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GraphHandlerTest.testOutputDOTGraph" />
         <item itemvalue="JUnit.GraphHandlerTest.testAddEdge" />
         <item itemvalue="JUnit.GraphHandlerTest.testSaveGraphToFile" />
         <item itemvalue="JUnit.GraphHandlerTest.testToString" />
@@ -218,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697075863477</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added Readme">
+      <created>1697081518424</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697081518424</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -245,6 +252,7 @@
     <MESSAGE value="Implemented test cases for Feature 1" />
     <MESSAGE value="Implemented test cases for Feature 2" />
     <MESSAGE value="Implemented test cases for Feature 3 and Feature 4. Added surefire plugin separately. In-built was not working for maven package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented test cases for Feature 3 and Feature 4. Added surefire plugin separately. In-built was not working for maven package" />
+    <MESSAGE value="Added Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Readme" />
   </component>
 </project>

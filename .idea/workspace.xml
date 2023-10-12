@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Implemented test cases for Feature 3 and Feature 4. Added surefire plugin separately. In-built was not working for maven package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
   <component name="RunManager" selected="JUnit.GraphHandlerTest.testOutputDOTGraph">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="SS_P1" />
+      <module name="cse-464-sshishod" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -71,7 +70,7 @@
       </method>
     </configuration>
     <configuration name="GraphHandlerTest.testAddEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SS_P1" />
+      <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testAddEdge" />
@@ -81,7 +80,7 @@
       </method>
     </configuration>
     <configuration name="GraphHandlerTest.testOutputDOTGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SS_P1" />
+      <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testOutputDOTGraph" />
@@ -91,7 +90,7 @@
       </method>
     </configuration>
     <configuration name="GraphHandlerTest.testSaveGraphToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SS_P1" />
+      <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testSaveGraphToFile" />
@@ -101,11 +100,24 @@
       </method>
     </configuration>
     <configuration name="GraphHandlerTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SS_P1" />
+      <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="cse-464-sshishod" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="cse-464-sshishod" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697075263300</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implemented test cases for Feature 3 and Feature 4. Added surefire plugin separately. In-built was not working for maven package">
+      <created>1697075863477</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697075863477</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">

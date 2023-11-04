@@ -166,6 +166,27 @@ public class GraphHandler {
         }
     }
 
+    /**
+     *
+     * Function for removing multiple nodes
+     *
+     * @param labels
+     * @return
+     * @throws Exception
+     */
+    public boolean removeNodes(ArrayList<String> labels) throws Exception {
+        ArrayList<String> nodesFailed = new ArrayList<>();
+        for (String label : labels) {
+            if (!removeNode(label)) {
+                nodesFailed.add(label);
+            }
+        }
+        if (!nodesFailed.isEmpty()) {
+            System.out.println("Encountered error, these nodes are not removed: " + nodesFailed);
+            return false;
+        }
+        return true;
+    }
 
     /**
      * Function for adding an edge in the graph

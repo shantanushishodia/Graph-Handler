@@ -87,11 +87,11 @@ public class GraphHandlerTest {
      */
     @Test
     public void testAddOneNode() throws Exception {
-        graphHandler.addOneNode("e");
+        graphHandler.addOneNode("NASA");
         System.out.println(graphHandler.toString());
 
         assertEquals(7, graphHandler.getGraph().vertexSet().size());
-        assertTrue(graphHandler.getGraph().containsVertex("e"));
+        assertTrue(graphHandler.getGraph().containsVertex("NASA"));
     }
 
     /**
@@ -127,6 +127,27 @@ public class GraphHandlerTest {
     }
 
     /**
+     * Function to test  api for removing multiple nodes
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testRemoveNodes() throws Exception {
+        graphHandler.addOneNode("Citadel");
+        graphHandler.addEdge("Citadel","NASA");
+        List<String> labels = new ArrayList<>();
+        labels.add("NASA");
+        labels.add("Citadel");
+        labels.add("Microsoft");
+        assertFalse(graphHandler.removeNodes((ArrayList<String>) labels));
+        assertFalse(graphHandler.getGraph().containsVertex("NASA"));
+        assertFalse(graphHandler.getGraph().containsVertex("Citadel"));
+        assertEquals(6, graphHandler.getGraph().vertexSet().size());
+        assertEquals(5, graphHandler.getGraph().edgeSet().size());
+        assertFalse(graphHandler.getGraph().containsEdge("Citadel","NASA"));
+    }
+
+    /**
      * Function to test addEdge Functionality
      *
      * @throws Exception
@@ -141,6 +162,11 @@ public class GraphHandlerTest {
         assertTrue(graphHandler.getGraph().containsEdge("Google", "Ford"));
     }
 
+    /**
+     * Function to test addEdge Functionality
+     *
+     * @throws Exception
+     */
     @Test
     public void testOutputDOTGraph() throws Exception {
         String outputDOTFile = "src/outputDOTFile.dot";

@@ -29,7 +29,7 @@ public class GraphHandlerTest {
     }
 
     /**
-     * Function  for testing graphImporter functionality
+     * Function  for testing graphImporter functionality (with invalid input check)
      *
      */
     @Test
@@ -81,7 +81,7 @@ public class GraphHandlerTest {
     }
 
     /**
-     * Function for testing addOneNode functionality
+     * Function for testing addOneNode (with duplication check) functionality
      *
      * @throws Exception
      */
@@ -90,12 +90,20 @@ public class GraphHandlerTest {
         graphHandler.addOneNode("NASA");
         System.out.println(graphHandler.toString());
 
+        Exception exception = assertThrows(Exception.class, () -> {
+            graphHandler.addOneNode("Google");
+        });
+
+        String expectedMessage = "Node already present";
+        String actualMessage = exception.getMessage();
+
         assertEquals(7, graphHandler.getGraph().vertexSet().size());
         assertTrue(graphHandler.getGraph().containsVertex("NASA"));
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     /**
-     * Function for testing addMultipleNodes functionality
+     * Function for testing addMultipleNodes (with duplication check) functionality
      *
      * @throws Exception
      */
@@ -107,14 +115,21 @@ public class GraphHandlerTest {
         labels.add("Microsoft");
         graphHandler.addMultipleNodes((ArrayList<String>) labels);
 
+        Exception exception = assertThrows(Exception.class, () -> {
+            graphHandler.addMultipleNodes((ArrayList<String>) labels);
+        });
+        String expectedMessage = "Node already present";
+        String actualMessage = exception.getMessage();
+
         assertEquals(9, graphHandler.getGraph().vertexSet().size());
         assertTrue(graphHandler.getGraph().containsVertex("Microsoft"));
         assertTrue(graphHandler.getGraph().containsVertex("Citadel"));
         assertTrue(graphHandler.getGraph().containsVertex("NASA"));
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     /**
-     * Function to test api for removing a node
+     * Function to test api for removing a node (with invalid node check)
      *
      */
     @Test
@@ -122,12 +137,19 @@ public class GraphHandlerTest {
         graphHandler.removeNode("Google");
         System.out.println(graphHandler.toString());
 
+        Exception exception = assertThrows(Exception.class, () -> {
+            graphHandler.removeNode("Google");
+        });
+        String expectedMessage = "Node not found";
+        String actualMessage = exception.getMessage();
+
         assertEquals(5, graphHandler.getGraph().vertexSet().size());
         assertFalse(graphHandler.getGraph().containsVertex("Google"));
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     /**
-     * Function to test  api for removing multiple nodes
+     * Function to test  api for removing multiple nodes (with invalid node check)
      *
      * @throws Exception
      */
@@ -136,19 +158,27 @@ public class GraphHandlerTest {
         graphHandler.addOneNode("Citadel");
         graphHandler.addEdge("Citadel","NASA");
         List<String> labels = new ArrayList<>();
-        labels.add("NASA");
+        labels.add("Google");
         labels.add("Citadel");
-        labels.add("Microsoft");
-        assertFalse(graphHandler.removeNodes((ArrayList<String>) labels));
+        labels.add("NASA");
+        assertTrue(graphHandler.removeNodes((ArrayList<String>) labels));
+
+        Exception exception = assertThrows(Exception.class, () -> {
+            graphHandler.removeNodes((ArrayList<String>) labels);
+        });
+        String expectedMessage = "Node not found";
+        String actualMessage = exception.getMessage();
+
         assertFalse(graphHandler.getGraph().containsVertex("NASA"));
         assertFalse(graphHandler.getGraph().containsVertex("Citadel"));
-        assertEquals(6, graphHandler.getGraph().vertexSet().size());
-        assertEquals(5, graphHandler.getGraph().edgeSet().size());
+        assertEquals(5, graphHandler.getGraph().vertexSet().size());
+        assertEquals(4, graphHandler.getGraph().edgeSet().size());
         assertFalse(graphHandler.getGraph().containsEdge("Citadel","NASA"));
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     /**
-     * Function to test addEdge Functionality
+     * Function to test addEdge (with duplicate edge check) Functionality
      *
      * @throws Exception
      */
@@ -157,13 +187,21 @@ public class GraphHandlerTest {
         graphHandler.addEdge("Google", "Ford");
         System.out.println(graphHandler.toString());
 
+        Exception exception = assertThrows(Exception.class, () -> {
+            graphHandler.addEdge("Google", "Meta");
+        });
+        String expectedMessage = "Edge already present in the graph";
+        String actualMessage = exception.getMessage();
+        System.out.println(actualMessage);
+
         assertEquals(6, graphHandler.getGraph().vertexSet().size());
         assertTrue(graphHandler.getGraph().containsVertex("Google"));
         assertTrue(graphHandler.getGraph().containsEdge("Google", "Ford"));
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     /**
-     * Function to test api for removing a node
+     * Function to test api for removing an edge (with invalid edge check)
      *
      * @throws Exception
      */
@@ -173,17 +211,24 @@ public class GraphHandlerTest {
         graphHandler.removeEdge("Meta", "Ford");
         System.out.println(graphHandler.toString());
 
+        Exception exception = assertThrows(Exception.class, () -> {
+            graphHandler.removeEdge("Meta", "Ford");
+        });
+        String expectedMessage = "Edge not present in the graph";
+        String actualMessage = exception.getMessage();
+
         assertEquals(6, graphHandler.getGraph().vertexSet().size());
         assertEquals(4, graphHandler.getGraph().edgeSet().size());
         assertTrue(graphHandler.getGraph().containsEdge("Google", "Meta"));
         assertTrue(graphHandler.getGraph().containsEdge("Ford", "Tesla"));
         assertTrue(graphHandler.getGraph().containsEdge("Tesla", "NXP"));
         assertTrue(graphHandler.getGraph().containsEdge("NXP", "Asus"));
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
 
     /**
-     * Function to test addEdge Functionality
+     * Function to test output DOT graph file
      *
      * @throws Exception
      */

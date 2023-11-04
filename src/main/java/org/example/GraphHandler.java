@@ -133,6 +133,9 @@ public class GraphHandler {
                 throw new Exception("Node not added, encountered error", e);
             }
         }
+        else {
+            throw new Exception("Node already present");
+        }
     }
 
     /**
@@ -161,8 +164,7 @@ public class GraphHandler {
                 throw new Exception("Node not removed, encountered error", e);
             }
         } else {
-            System.out.println("Node not found");
-            return false;
+            throw new Exception("Node not found");
         }
     }
 
@@ -183,8 +185,9 @@ public class GraphHandler {
         }
         if (!nodesFailed.isEmpty()) {
             System.out.println("Encountered error, these nodes are not removed: " + nodesFailed);
-            return false;
+            throw new Exception("Not all nodes removed");
         }
+
         return true;
     }
 
@@ -200,7 +203,7 @@ public class GraphHandler {
         try {
             if (primaryGraph.containsEdge(initialNode, targetNode)) {
                 System.out.println("\tEdge already present in the graph");
-                return false;
+                throw new Exception();
             } else {
 
                 if (!primaryGraph.containsVertex(initialNode))
@@ -212,7 +215,7 @@ public class GraphHandler {
                 return true;
             }
         } catch (Exception e) {
-            throw new Exception("Edge not created, encountered error", e);
+            throw new Exception("\tEdge already present in the graph", e);
         }
 
     }
@@ -231,10 +234,10 @@ public class GraphHandler {
                 primaryGraph.removeEdge(srcLabel, dstLabel);
                 return true;
             } else {
-                return false;
+                throw new Exception();
             }
         } catch (Exception e) {
-            throw new Exception("Error while removing edge", e);
+            throw new Exception("Edge not present in the graph", e);
         }
     }
 

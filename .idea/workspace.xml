@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Added Readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +36,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/shant/Desktop/464/GraphManager",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shant/Desktop/464&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shant\IdeaProjects\SS_P1\src\test" />
@@ -55,7 +58,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GraphHandlerTest.testRemoveNode">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="cse-464-sshishod" />
@@ -79,6 +82,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GraphHandlerTest.testAddNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cse-464-sshishod" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
+      <option name="METHOD_NAME" value="testAddNodes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GraphHandlerTest.testOutputDOTGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
@@ -89,46 +102,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.testSaveGraphToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testRemoveNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testSaveGraphToFile" />
+      <option name="METHOD_NAME" value="testRemoveNode" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphHandlerTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cse-464-sshishod" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testToString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="cse-464-sshishod" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="cse-464-sshishod" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
+        <item itemvalue="JUnit.GraphHandlerTest.testAddEdge" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GraphHandlerTest.testOutputDOTGraph" />
-        <item itemvalue="JUnit.GraphHandlerTest.testAddEdge" />
-        <item itemvalue="JUnit.GraphHandlerTest.testSaveGraphToFile" />
-        <item itemvalue="JUnit.GraphHandlerTest.testToString" />
+        <item itemvalue="JUnit.GraphHandlerTest.testAddNodes" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697081518424</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Readme">
+      <created>1697083140838</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1697083140838</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">

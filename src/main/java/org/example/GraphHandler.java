@@ -148,6 +148,24 @@ public class GraphHandler {
         }
     }
 
+    /**
+     * Function for removing a node
+     *
+     */
+    public boolean removeNode(String label) throws Exception {
+        if (primaryGraph.containsVertex(label)) {
+            try {
+                primaryGraph.removeVertex(label);
+                return true;
+            } catch (Exception e) {
+                throw new Exception("Node not removed, encountered error", e);
+            }
+        } else {
+            System.out.println("Node not found");
+            return false;
+        }
+    }
+
 
     /**
      * Function for adding an edge in the graph

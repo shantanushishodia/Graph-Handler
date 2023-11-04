@@ -114,6 +114,21 @@ public class GraphHandlerTest {
     }
 
     /**
+     * Function to test api for removing a node
+     *
+     */
+    @Test
+    public void testRemoveNode() throws Exception {
+        graphHandler.removeNode("Google");
+        System.out.println(graphHandler.toString());
+
+        assertEquals(5, graphHandler.getGraph().vertexSet().size());
+        assertFalse(graphHandler.getGraph().containsVertex("Google"));
+    }
+
+
+
+    /**
      * Function to test addEdge Functionality
      *
      * @throws Exception

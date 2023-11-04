@@ -33,6 +33,7 @@ public class Main {
                 System.out.println("\t6. Add one edge");
                 System.out.println("\t7. Save graph details in DOT format");
                 System.out.println("\t8. Save graph details in PNG format");
+                System.out.println("\t9. Remove a node");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {
@@ -69,6 +70,10 @@ public class Main {
                         break;
                     case 8:
                         graphHandler.saveGraphPNG("src/OutputGraphPNG.png");
+                        break;
+                    case 9:
+                        System.out.println("\tInput the name for the node you wish to remove:");
+                        graphHandler.removeNode(input.next());
                         break;
                     case 0:
                         break;

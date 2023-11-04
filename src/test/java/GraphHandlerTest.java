@@ -126,8 +126,6 @@ public class GraphHandlerTest {
         assertFalse(graphHandler.getGraph().containsVertex("Google"));
     }
 
-
-
     /**
      * Function to test addEdge Functionality
      *

@@ -218,6 +218,27 @@ public class GraphHandler {
     }
 
     /**
+     * Function for removing an edge from the graph
+     *
+     * @param srcLabel
+     * @param dstLabel
+     * @return
+     * @throws Exception
+     */
+    public boolean removeEdge(String srcLabel, String dstLabel) throws Exception {
+        try {
+            if (primaryGraph.containsEdge(srcLabel, dstLabel)) {
+                primaryGraph.removeEdge(srcLabel, dstLabel);
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            throw new Exception("Error while removing edge", e);
+        }
+    }
+
+    /**
      * Function for saving the graph in DOT Format
      *
      * @param filePath

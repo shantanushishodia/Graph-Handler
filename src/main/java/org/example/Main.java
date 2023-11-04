@@ -35,6 +35,7 @@ public class Main {
                 System.out.println("\t8. Save graph details in PNG format");
                 System.out.println("\t9. Remove a node");
                 System.out.println("\t10. Remove multiples nodes");
+                System.out.println("\t11. Remove an edge");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {
@@ -82,6 +83,13 @@ public class Main {
                         for(int i=0;i<rn;i++)
                             listOfNodesToBeRemoved.add(input.next());
                         graphHandler.removeNodes(listOfNodesToBeRemoved);
+                        break;
+                    case 11:
+                        System.out.println("\tInput source node for the edge");
+                        String initialNodeToRemove = input.next();
+                        System.out.println("\tInput target node for the edge");
+                        String targetNodeToRemove = input.next();
+                        graphHandler.removeEdge(initialNodeToRemove, targetNodeToRemove);
                         break;
                     case 0:
                         break;

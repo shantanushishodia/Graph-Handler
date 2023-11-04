@@ -163,6 +163,26 @@ public class GraphHandlerTest {
     }
 
     /**
+     * Function to test api for removing a node
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testRemoveEdge() throws Exception {
+
+        graphHandler.removeEdge("Meta", "Ford");
+        System.out.println(graphHandler.toString());
+
+        assertEquals(6, graphHandler.getGraph().vertexSet().size());
+        assertEquals(4, graphHandler.getGraph().edgeSet().size());
+        assertTrue(graphHandler.getGraph().containsEdge("Google", "Meta"));
+        assertTrue(graphHandler.getGraph().containsEdge("Ford", "Tesla"));
+        assertTrue(graphHandler.getGraph().containsEdge("Tesla", "NXP"));
+        assertTrue(graphHandler.getGraph().containsEdge("NXP", "Asus"));
+    }
+
+
+    /**
      * Function to test addEdge Functionality
      *
      * @throws Exception

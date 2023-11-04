@@ -192,7 +192,6 @@ public class GraphHandlerTest {
         });
         String expectedMessage = "Edge already present in the graph";
         String actualMessage = exception.getMessage();
-        System.out.println(actualMessage);
 
         assertEquals(6, graphHandler.getGraph().vertexSet().size());
         assertTrue(graphHandler.getGraph().containsVertex("Google"));

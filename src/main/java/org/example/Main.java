@@ -9,6 +9,10 @@ import java.util.Scanner;
  */
 public class Main {
 
+    enum Algorithm{
+        BFS,
+        DFS
+    }
     /**
      * main function
      *
@@ -36,7 +40,7 @@ public class Main {
                 System.out.println("\t9. Remove a node");
                 System.out.println("\t10. Remove multiples nodes");
                 System.out.println("\t11. Remove an edge");
-                System.out.println("\t12. Find a path using BFS");
+                System.out.println("\t12. Find a path between two nodes");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {
@@ -55,9 +59,9 @@ public class Main {
                         break;
                     case 5:
                         System.out.println("\tEnter the number of nodes you want to add:");
-                        int n= input.nextInt();
+                        int n = input.nextInt();
                         ArrayList<String> listOfNodes = new ArrayList<>();
-                        for(int i=0;i<n;i++)
+                        for (int i = 0; i < n; i++)
                             listOfNodes.add(input.next());
                         graphHandler.addMultipleNodes(listOfNodes);
                         break;
@@ -79,9 +83,9 @@ public class Main {
                         graphHandler.removeNode(input.next());
                     case 10:
                         System.out.println("\tEnter the number of nodes you want to remove:");
-                        int rn= input.nextInt();
+                        int rn = input.nextInt();
                         ArrayList<String> listOfNodesToBeRemoved = new ArrayList<>();
-                        for(int i=0;i<rn;i++)
+                        for (int i = 0; i < rn; i++)
                             listOfNodesToBeRemoved.add(input.next());
                         graphHandler.removeNodes(listOfNodesToBeRemoved);
                         break;
@@ -93,11 +97,19 @@ public class Main {
                         graphHandler.removeEdge(initialNodeToRemove, targetNodeToRemove);
                         break;
                     case 12:
+                        Algorithm algo;
+                        try {
+                            System.out.println("\tChoose Algo BFS/DFS:");
+                            algo = Algorithm.valueOf(input.next());
+                        } catch (Exception e) {
+                            System.out.println("\tProvide the correct algo: BFS/DFS");
+                            break;
+                        }
                         System.out.println("\tInput source node");
                         String srcNode = input.next();
                         System.out.println("\tInput destination node");
                         String dstNode = input.next();
-                        graphHandler.graphSearch(srcNode, dstNode);
+                        graphHandler.graphSearch(srcNode, dstNode, algo);
                         break;
                     case 0:
                         break;

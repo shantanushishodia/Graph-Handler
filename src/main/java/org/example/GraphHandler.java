@@ -18,7 +18,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 
@@ -299,15 +298,20 @@ public class GraphHandler {
      *
      * @param src
      * @param dst
+     * @param algo
      * @return
      */
-    public void graphSearch(String src, String dst) throws Exception {
-        BFS bfs = new BFS();
-        String path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-        System.out.println(path);
+    public void graphSearch(String src, String dst, Main.Algorithm algo) throws Exception {
 
-        DFS dfs = new DFS();
-        String path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-        System.out.println(path);
+        if(algo.name()=="BFS") {
+            BFS bfs = new BFS();
+            String path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+            System.out.println(path);
+        }
+        else if(algo.name()=="DFS") {
+            DFS dfs = new DFS();
+            String path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+            System.out.println(path);
+        }
     }
 }

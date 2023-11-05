@@ -1,6 +1,7 @@
 
 
 import org.example.BFS;
+import org.example.DFS;
 import org.example.GraphHandler;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
@@ -244,6 +245,43 @@ public class GraphHandlerTest {
         System.out.println("output: " + outputDOTFile);
         String expected = Files.readString(Paths.get("src/test/expectedGraphDOT.txt"));
         assertEquals(expected, output);
+    }
+
+    /**
+     * Function to test DFS (with edge cases)
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testDFS() throws Exception {
+        GraphHandler gh = new GraphHandler();
+        gh.graphImporter("src/test/test1.dot");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Google");
+        expected.add("Meta");
+        expected.add("Ford");
+        expected.add("Tesla");
+        String expectedString = "Google -> Meta -> Ford -> Tesla";
+
+        Graph<String, DefaultEdge> currGraph = gh.getGraph();
+        DFS dfs = new DFS();
+        String result = dfs.findPath(currGraph, "Google", "Tesla");
+        System.out.println(result);
+        assertNotNull(result);
+        assertEquals(expected, Arrays.asList(result.split(" -> ")));
+        assertEquals(expectedString, result);
+
+        result = dfs.findPath(currGraph, "Tesla", "Google");
+        assertNull(result);
+
+        Exception exception = assertThrows(Exception.class, () -> {
+            dfs.findPath(currGraph,"Google", "Google");
+        });
+        String expectedMessage = "Source and destination cannot be the same node";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+
+
     }
 
     /**

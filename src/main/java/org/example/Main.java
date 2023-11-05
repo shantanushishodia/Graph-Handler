@@ -8,6 +8,14 @@ import java.util.Scanner;
  *
  */
 public class Main {
+    /**
+     * Enum for algo decision
+     *
+     */
+    enum Algorithm {
+        BFS,
+        DFS
+    }
 
     /**
      * main function
@@ -36,7 +44,7 @@ public class Main {
                 System.out.println("\t9. Remove a node");
                 System.out.println("\t10. Remove multiples nodes");
                 System.out.println("\t11. Remove an edge");
-                System.out.println("\t12. Find a path using BFS");
+                System.out.println("\t12. Find a path between two nodes");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {
@@ -97,7 +105,9 @@ public class Main {
                         String srcNode = input.next();
                         System.out.println("\tInput destination node");
                         String dstNode = input.next();
-                        graphHandler.graphSearch(srcNode, dstNode);
+                        System.out.println("\tInput the algo of choice BFS or DFS:");
+                        Algorithm algo = Algorithm.valueOf(input.next());
+                        graphHandler.graphSearch(srcNode, dstNode, algo);
                         break;
                     case 0:
                         break;

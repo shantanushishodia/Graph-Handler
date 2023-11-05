@@ -290,7 +290,7 @@ public class GraphHandlerTest {
      * @throws Exception
      */
     @Test
-    public void testDFS() throws Exception {
+    public void testBFS() throws Exception {
         GraphHandler gh = new GraphHandler();
         gh.graphImporter("src/test/test1.dot");
         ArrayList<String> expected = new ArrayList<>();

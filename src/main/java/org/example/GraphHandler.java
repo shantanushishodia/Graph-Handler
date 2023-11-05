@@ -18,7 +18,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+
 
 /**
  * Class for handling different functionalities of the program
@@ -292,7 +294,17 @@ public class GraphHandler {
         }
     }
 
-
-
+    /**
+     * Function to perform BFS
+     *
+     * @param src
+     * @param dst
+     * @return
+     */
+    public void graphSearch(String src, String dst) throws Exception {
+        BFS bfs = new BFS();
+        String path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+        System.out.println(path);
+    }
 
 }

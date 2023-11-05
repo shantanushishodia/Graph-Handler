@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Class for representing a path
+ * Class for managing path
+ *
  *
  */
 public class Path {

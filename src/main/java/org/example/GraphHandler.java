@@ -305,6 +305,9 @@ public class GraphHandler {
         BFS bfs = new BFS();
         String path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
         System.out.println(path);
-    }
 
+        DFS dfs = new DFS();
+        String path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+        System.out.println(path);
+    }
 }

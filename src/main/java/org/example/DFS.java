@@ -10,7 +10,14 @@ import java.util.*;
  *
  */
 public class DFS {
-    public static String findPath(Graph<String, DefaultEdge> graph, String src, String dst) {
+    public static String findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
+        try {
+            if(src.equals(dst)){
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            throw new Exception("Source and destination cannot be the same node", e);
+        }
         Set<String> visited = new HashSet<>();
         Map<String, String> parentMap = new HashMap<>();
         boolean found = dfs(graph, src, dst, visited, parentMap);

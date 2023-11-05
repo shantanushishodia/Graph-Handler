@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Added BFS feature with testing including edge cases">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Path.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,22 +62,23 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+  <component name="RunManager" selected="JUnit.GraphHandlerTest.testBFS">
+    <configuration name="GraphHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="GraphHandlerTest.testBFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testBFS" />
@@ -89,11 +87,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.testRemoveEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testOutputDOTGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveEdge" />
+      <option name="METHOD_NAME" value="testOutputDOTGraph" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,6 +101,8 @@
     </configuration>
     <configuration name="GraphHandlerTest.testRemoveNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testRemoveNode" />
@@ -111,6 +113,8 @@
     </configuration>
     <configuration name="GraphHandlerTest.testRemoveNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testRemoveNodes" />
@@ -119,13 +123,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.GraphHandlerTest" />
+      <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+      <item itemvalue="JUnit.GraphHandlerTest.testOutputDOTGraph" />
+      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
+      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+        <item itemvalue="JUnit.GraphHandlerTest" />
+        <item itemvalue="JUnit.GraphHandlerTest.testOutputDOTGraph" />
         <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
         <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveEdge" />
-        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699091313641</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added DFS feature">
+      <created>1699202205395</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699202205395</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -316,6 +334,7 @@
     <MESSAGE value="Added feature and test case for removing an edge" />
     <MESSAGE value="Updated tests for edge cases like duplicate edges, nodes, etc" />
     <MESSAGE value="Removed Debugging Outputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Debugging Outputs" />
+    <MESSAGE value="Added DFS feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DFS feature" />
   </component>
 </project>

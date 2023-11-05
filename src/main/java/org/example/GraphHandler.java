@@ -292,6 +292,18 @@ public class GraphHandler {
         }
     }
 
+    /**
+     * Function for finding a path in graph using DFS
+     *
+     * @param src
+     * @param dst
+     * @throws Exception
+     */
+    public void graphSearch(String src, String dst) throws Exception {
+        DFS dfs = new DFS();
+        String path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+        System.out.println(path);
+    }
 
 
 

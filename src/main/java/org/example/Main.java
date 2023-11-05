@@ -44,7 +44,7 @@ public class Main {
                 System.out.println("\t9. Remove a node");
                 System.out.println("\t10. Remove multiples nodes");
                 System.out.println("\t11. Remove an edge");
-                System.out.println("\t12. Find a path between two nodes");
+                System.out.println("\t12. Find a path using BFS");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {
@@ -101,12 +101,18 @@ public class Main {
                         graphHandler.removeEdge(initialNodeToRemove, targetNodeToRemove);
                         break;
                     case 12:
+                        Algorithm algo;
+                        try {
+                            System.out.println("\tChoose Algo BFS/DFS:");
+                            algo = Algorithm.valueOf(input.next());
+                        } catch (Exception e) {
+                            System.out.println("\tProvide the correct algo: BFS/DFS");
+                            break;
+                        }
                         System.out.println("\tInput source node");
                         String srcNode = input.next();
                         System.out.println("\tInput destination node");
                         String dstNode = input.next();
-                        System.out.println("\tInput the algo of choice BFS or DFS:");
-                        Algorithm algo = Algorithm.valueOf(input.next());
                         graphHandler.graphSearch(srcNode, dstNode, algo);
                         break;
                     case 0:

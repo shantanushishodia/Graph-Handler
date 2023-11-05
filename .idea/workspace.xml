@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f21307fa-d7bf-4ca9-acae-86de1f581d8f" name="Changes" comment="Added DFS feature and testing with edge case handling">
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +28,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,71 +63,80 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GraphHandlerTest.testRemoveEdge">
-    <configuration name="GraphHandlerTest.testAddEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="cse-464-sshishod" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cse-464-sshishod" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testAddEdge" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphHandlerTest.testBFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cse-464-sshishod" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
+      <option name="METHOD_NAME" value="testBFS" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.testAddNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testDFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testAddNodes" />
+      <option name="METHOD_NAME" value="testDFS" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.testRemoveEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testOutputDOTGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveEdge" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphHandlerTest.testRemoveNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cse-464-sshishod" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveNode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphHandlerTest.testRemoveNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cse-464-sshishod" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveNodes" />
+      <option name="METHOD_NAME" value="testOutputDOTGraph" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.GraphHandlerTest.testAddEdge" />
-      <item itemvalue="JUnit.GraphHandlerTest.testAddNodes" />
-      <item itemvalue="JUnit.GraphHandlerTest.testRemoveEdge" />
-      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
-      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
+      <item itemvalue="JUnit.GraphHandlerTest" />
+      <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+      <item itemvalue="JUnit.GraphHandlerTest.testOutputDOTGraph" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveEdge" />
-        <item itemvalue="JUnit.GraphHandlerTest.testAddNodes" />
-        <item itemvalue="JUnit.GraphHandlerTest.testAddEdge" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
+        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+        <item itemvalue="JUnit.GraphHandlerTest" />
+        <item itemvalue="JUnit.GraphHandlerTest.testOutputDOTGraph" />
       </list>
     </recent_temporary>
   </component>

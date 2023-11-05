@@ -20,16 +20,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Set;
 
+
 /**
  * Class for handling different functionalities of the program
  *
  */
 public class GraphHandler {
-
-    enum Algorithm {
-        BFS,
-        DFS
-    }
 
     /**
      * Primary graph for loading from DOT and making changes to
@@ -307,13 +303,15 @@ public class GraphHandler {
      */
     public void graphSearch(String src, String dst, Main.Algorithm algo) throws Exception {
 
-        if (algo.name() == "BFS") {
+        if(algo.name()=="BFS") {
             BFS bfs = new BFS();
             String path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
             System.out.println(path);
         }
-
+        else if(algo.name()=="DFS") {
+            DFS dfs = new DFS();
+            String path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+            System.out.println(path);
+        }
     }
-
-
 }

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +279,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699202205395</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updated Naming scheme">
+      <created>1699208778303</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699208778303</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Updated Naming scheme">
+      <created>1699208917477</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699208917477</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -326,6 +339,7 @@
     <MESSAGE value="Updated tests for edge cases like duplicate edges, nodes, etc" />
     <MESSAGE value="Removed Debugging Outputs" />
     <MESSAGE value="Added DFS feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DFS feature" />
+    <MESSAGE value="Updated Naming scheme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Naming scheme" />
   </component>
 </project>

@@ -294,7 +294,7 @@ public class GraphHandler {
     }
 
     /**
-     * Function to perform BFS
+     * Function to perform path search
      *
      * @param src
      * @param dst

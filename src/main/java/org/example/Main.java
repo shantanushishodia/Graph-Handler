@@ -44,7 +44,7 @@ public class Main {
                 System.out.println("\t9. Remove a node");
                 System.out.println("\t10. Remove multiples nodes");
                 System.out.println("\t11. Remove an edge");
-                System.out.println("\t12. Find a path using BFS");
+                System.out.println("\t12. Find a path between two nodes");
                 System.out.println("\t0. Exit");
                 userSelection=input.nextInt();
                 switch (userSelection) {

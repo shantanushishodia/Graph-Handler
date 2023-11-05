@@ -3,6 +3,7 @@
 import org.example.BFS;
 import org.example.DFS;
 import org.example.GraphHandler;
+import org.example.Path;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.junit.jupiter.api.BeforeEach;
@@ -265,11 +266,10 @@ public class GraphHandlerTest {
 
         Graph<String, DefaultEdge> currGraph = gh.getGraph();
         DFS dfs = new DFS();
-        String result = dfs.findPath(currGraph, "Google", "Tesla");
-        System.out.println(result);
+        Path result = dfs.findPath(currGraph, "Google", "Tesla");
         assertNotNull(result);
-        assertEquals(expected, Arrays.asList(result.split(" -> ")));
-        assertEquals(expectedString, result);
+        assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
+        assertEquals(expectedString, result.buildPath("Tesla"));
 
         result = dfs.findPath(currGraph, "Tesla", "Google");
         assertNull(result);
@@ -302,11 +302,10 @@ public class GraphHandlerTest {
 
         Graph<String, DefaultEdge> currGraph = gh.getGraph();
         BFS bfs = new BFS();
-        String result = bfs.findPath(currGraph, "Google", "Tesla");
-        System.out.println(result);
+        Path result = bfs.findPath(currGraph, "Google", "Tesla");
         assertNotNull(result);
-        assertEquals(expected, Arrays.asList(result.split(" -> ")));
-        assertEquals(expectedString, result);
+        assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
+        assertEquals(expectedString, result.buildPath("Tesla"));
 
         result = bfs.findPath(currGraph, "Tesla", "Google");
         assertNull(result);

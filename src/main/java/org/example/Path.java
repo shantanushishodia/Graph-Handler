@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Class for managing path
@@ -11,13 +8,14 @@ import java.util.Map;
  *
  */
 public class Path {
-    public static String buildPath(Map<String, String> parentMap, String destination) {
+    public Map<String, String> pathMap = new HashMap<>();
+    public String buildPath(String destination) {
         List<String> path = new ArrayList<>();
         String current = destination;
 
         while (current != null) {
             path.add(current);
-            current = parentMap.get(current);
+            current = pathMap.get(current);
         }
 
         Collections.reverse(path);
@@ -28,4 +26,6 @@ public class Path {
         output += path.get(path.size()-1);
         return output;
     }
+
+
 }

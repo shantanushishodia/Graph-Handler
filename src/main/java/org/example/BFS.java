@@ -10,7 +10,7 @@ import java.util.*;
  *
  */
 public class BFS {
-    public String findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
+    public Path findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
         try {
             if(src.equals(dst)){
                 throw new Exception();
@@ -18,19 +18,19 @@ public class BFS {
         } catch (Exception e) {
             throw new Exception("Source and destination cannot be the same node", e);
         }
-        Map<String, String> pathMap = new HashMap<>();
+        Path path = new Path();
         Queue<String> queue = new LinkedList<>();
         Set<String> visited = new HashSet<>();
 
         queue.add(src);
         visited.add(src);
-        pathMap.put(src, null);
+        path.pathMap.put(src, null);
 
         while (!queue.isEmpty()) {
             String current = queue.poll();
 
             if (current.equals(dst)) {
-                return Path.buildPath(pathMap, dst);
+                return path;
             }
 
             for (DefaultEdge edge : graph.outgoingEdgesOf(current)) {
@@ -38,7 +38,7 @@ public class BFS {
                 if (!visited.contains(neighbor)) {
                     queue.add(neighbor);
                     visited.add(neighbor);
-                    pathMap.put(neighbor, current);
+                    path.pathMap.put(neighbor, current);
                 }
             }
         }

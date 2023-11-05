@@ -301,17 +301,21 @@ public class GraphHandler {
      * @param algo
      * @return
      */
-    public void graphSearch(String src, String dst, Main.Algorithm algo) throws Exception {
+    public Path graphSearch(String src, String dst, Main.Algorithm algo) throws Exception {
 
         if(algo.name()=="BFS") {
             BFS bfs = new BFS();
-            String path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-            System.out.println(path);
+            Path path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+            System.out.println(path.buildPath(dst));
+            return path;
         }
         else if(algo.name()=="DFS") {
             DFS dfs = new DFS();
-            String path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-            System.out.println(path);
+            Path path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+            System.out.println(path.buildPath(dst));
+            return path;
         }
+        return null;
     }
+
 }

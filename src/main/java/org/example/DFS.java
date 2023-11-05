@@ -10,7 +10,8 @@ import java.util.*;
  *
  */
 public class DFS {
-    public static String findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
+    static Path path = new Path();
+    public Path findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
         try {
             if(src.equals(dst)){
                 throw new Exception();
@@ -19,17 +20,16 @@ public class DFS {
             throw new Exception("Source and destination cannot be the same node", e);
         }
         Set<String> visited = new HashSet<>();
-        Map<String, String> parentMap = new HashMap<>();
-        boolean found = dfs(graph, src, dst, visited, parentMap);
+        boolean found = dfs(graph, src, dst, visited);
 
         if (found) {
-            return Path.buildPath(parentMap, dst);
+            return path;
         } else {
             return null;
         }
     }
 
-    private static boolean dfs(Graph<String, DefaultEdge> graph, String current, String destination, Set<String> visited, Map<String, String> parentMap) {
+    private static boolean dfs(Graph<String, DefaultEdge> graph, String current, String destination, Set<String> visited) {
         visited.add(current);
 
         if (current.equals(destination)) {
@@ -39,8 +39,8 @@ public class DFS {
         for (DefaultEdge edge : graph.outgoingEdgesOf(current)) {
             String neighbor = graph.getEdgeTarget(edge);
             if (!visited.contains(neighbor)) {
-                parentMap.put(neighbor, current);
-                if (dfs(graph, neighbor, destination, visited, parentMap)) {
+                path.pathMap.put(neighbor, current);
+                if (dfs(graph, neighbor, destination, visited)) {
                     return true;
                 }
             }

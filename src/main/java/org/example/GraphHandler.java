@@ -49,7 +49,7 @@ public class GraphHandler {
      * @param filePath
      * @throws Exception
      */
-    public void graphImporter(String filePath) throws Exception {
+    public void graphImporterFromDot(String filePath) throws Exception {
         String fileData =null;
         try {
             fileData = Files.readString(Paths.get(filePath));
@@ -156,7 +156,7 @@ public class GraphHandler {
      * Function for removing a node
      *
      */
-    public boolean removeNode(String label) throws Exception {
+    public boolean removeOneNode(String label) throws Exception {
         if (primaryGraph.containsVertex(label)) {
             try {
                 primaryGraph.removeVertex(label);
@@ -177,10 +177,10 @@ public class GraphHandler {
      * @return
      * @throws Exception
      */
-    public boolean removeNodes(ArrayList<String> labels) throws Exception {
+    public boolean removeMultipleNodes(ArrayList<String> labels) throws Exception {
         ArrayList<String> nodesFailed = new ArrayList<>();
         for (String label : labels) {
-            if (!removeNode(label)) {
+            if (!removeOneNode(label)) {
                 nodesFailed.add(label);
             }
         }
@@ -200,7 +200,7 @@ public class GraphHandler {
      * @return
      * @throws Exception
      */
-    public boolean addEdge(String initialNode, String targetNode) throws Exception {
+    public boolean addOneEdge(String initialNode, String targetNode) throws Exception {
         try {
             if (primaryGraph.containsEdge(initialNode, targetNode)) {
                 System.out.println("\tEdge already present in the graph");
@@ -229,7 +229,7 @@ public class GraphHandler {
      * @return
      * @throws Exception
      */
-    public boolean removeEdge(String srcLabel, String dstLabel) throws Exception {
+    public boolean removeOneEdge(String srcLabel, String dstLabel) throws Exception {
         try {
             if (primaryGraph.containsEdge(srcLabel, dstLabel)) {
                 primaryGraph.removeEdge(srcLabel, dstLabel);
@@ -248,7 +248,7 @@ public class GraphHandler {
      * @param filePath
      * @throws Exception
      */
-    public void saveGraphDOT(String filePath) throws Exception {
+    public void saveGraphToDOT(String filePath) throws Exception {
         DOTExporter<String, DefaultEdge> graphExporter = new DOTExporter<>();
         StringWriter writer = new StringWriter();
         String stringDOT;
@@ -275,7 +275,7 @@ public class GraphHandler {
      * @param filePath
      * @throws Exception
      */
-    public void saveGraphPNG(String filePath) throws Exception {
+    public void saveGraphToPNG(String filePath) throws Exception {
         JGraphXAdapter<String, DefaultEdge> adapterForGraph = new JGraphXAdapter<String, DefaultEdge>(primaryGraph);
         mxIGraphLayout layout = new mxCircleLayout(adapterForGraph);
         try {
@@ -301,7 +301,7 @@ public class GraphHandler {
      * @param algo
      * @return
      */
-    public Path graphSearch(String src, String dst, Main.Algorithm algo) throws Exception {
+    public Path graphSearchWithAlgo(String src, String dst, Main.Algorithm algo) throws Exception {
 
         if(algo.name()=="BFS") {
             BFS bfs = new BFS();

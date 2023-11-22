@@ -49,7 +49,7 @@ public class Main {
                 userSelection=input.nextInt();
                 switch (userSelection) {
                     case 1:
-                        graphHandler.graphImporter("src/companies.dot");
+                        graphHandler.graphImporterFromDot("src/companies.dot");
                         break;
                     case 2:
                         System.out.println(graphHandler.toString());
@@ -74,31 +74,31 @@ public class Main {
                         String initialNode = input.next();
                         System.out.println("\tInput target node for the edge");
                         String targetNode = input.next();
-                        graphHandler.addEdge(initialNode, targetNode);
+                        graphHandler.addOneEdge(initialNode, targetNode);
                         break;
                     case 7:
-                        graphHandler.saveGraphDOT("src/expectedGraphDOT.txt");
+                        graphHandler.saveGraphToDOT("src/expectedGraphDOT.txt");
                         break;
                     case 8:
-                        graphHandler.saveGraphPNG("src/OutputGraphPNG.png");
+                        graphHandler.saveGraphToPNG("src/OutputGraphPNG.png");
                         break;
                     case 9:
                         System.out.println("\tInput the name for the node you wish to remove:");
-                        graphHandler.removeNode(input.next());
+                        graphHandler.removeOneNode(input.next());
                     case 10:
                         System.out.println("\tEnter the number of nodes you want to remove:");
                         int rn= input.nextInt();
                         ArrayList<String> listOfNodesToBeRemoved = new ArrayList<>();
                         for(int i=0;i<rn;i++)
                             listOfNodesToBeRemoved.add(input.next());
-                        graphHandler.removeNodes(listOfNodesToBeRemoved);
+                        graphHandler.removeMultipleNodes(listOfNodesToBeRemoved);
                         break;
                     case 11:
                         System.out.println("\tInput source node for the edge");
                         String initialNodeToRemove = input.next();
                         System.out.println("\tInput target node for the edge");
                         String targetNodeToRemove = input.next();
-                        graphHandler.removeEdge(initialNodeToRemove, targetNodeToRemove);
+                        graphHandler.removeOneEdge(initialNodeToRemove, targetNodeToRemove);
                         break;
                     case 12:
                         Algorithm algo;
@@ -113,7 +113,7 @@ public class Main {
                         String srcNode = input.next();
                         System.out.println("\tInput destination node");
                         String dstNode = input.next();
-                        graphHandler.graphSearch(srcNode, dstNode, algo);
+                        graphHandler.graphSearchWithAlgo(srcNode, dstNode, algo);
                         break;
                     case 0:
                         break;

@@ -31,7 +31,7 @@ public class GraphHandlerTest {
     @BeforeEach
     public void initialize() throws Exception {
         graphHandler = new GraphHandler();
-        graphHandler.graphImporter("src/test/test1.dot");
+        graphHandler.graphImporterFromDot("src/test/test1.dot");
     }
 
     /**
@@ -51,7 +51,7 @@ public class GraphHandlerTest {
         System.out.println(graphHandler.toString());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.graphImporter("src/fakeFile.dot");
+            graphHandler.graphImporterFromDot("src/fakeFile.dot");
         });
 
         String expectedMessage = "Unable to read file, encountered error";
@@ -140,11 +140,11 @@ public class GraphHandlerTest {
      */
     @Test
     public void testRemoveNode() throws Exception {
-        graphHandler.removeNode("Google");
+        graphHandler.removeOneNode("Google");
         System.out.println(graphHandler.toString());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeNode("Google");
+            graphHandler.removeOneNode("Google");
         });
         String expectedMessage = "Node not found";
         String actualMessage = exception.getMessage();
@@ -162,15 +162,15 @@ public class GraphHandlerTest {
     @Test
     public void testRemoveNodes() throws Exception {
         graphHandler.addOneNode("Citadel");
-        graphHandler.addEdge("Citadel","NASA");
+        graphHandler.addOneEdge("Citadel","NASA");
         List<String> labels = new ArrayList<>();
         labels.add("Google");
         labels.add("Citadel");
         labels.add("NASA");
-        assertTrue(graphHandler.removeNodes((ArrayList<String>) labels));
+        assertTrue(graphHandler.removeMultipleNodes((ArrayList<String>) labels));
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeNodes((ArrayList<String>) labels);
+            graphHandler.removeMultipleNodes((ArrayList<String>) labels);
         });
         String expectedMessage = "Node not found";
         String actualMessage = exception.getMessage();
@@ -190,11 +190,11 @@ public class GraphHandlerTest {
      */
     @Test
     public void testAddEdge() throws Exception {
-        graphHandler.addEdge("Google", "Ford");
+        graphHandler.addOneEdge("Google", "Ford");
         System.out.println(graphHandler.toString());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.addEdge("Google", "Meta");
+            graphHandler.addOneEdge("Google", "Meta");
         });
         String expectedMessage = "Edge already present in the graph";
         String actualMessage = exception.getMessage();
@@ -213,11 +213,11 @@ public class GraphHandlerTest {
     @Test
     public void testRemoveEdge() throws Exception {
 
-        graphHandler.removeEdge("Meta", "Ford");
+        graphHandler.removeOneEdge("Meta", "Ford");
         System.out.println(graphHandler.toString());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeEdge("Meta", "Ford");
+            graphHandler.removeOneEdge("Meta", "Ford");
         });
         String expectedMessage = "Edge not present in the graph";
         String actualMessage = exception.getMessage();
@@ -240,7 +240,7 @@ public class GraphHandlerTest {
     @Test
     public void testOutputDOTGraph() throws Exception {
         String outputDOTFile = "src/outputDOTFile.dot";
-        graphHandler.saveGraphDOT(outputDOTFile);
+        graphHandler.saveGraphToDOT(outputDOTFile);
 
         String output = Files.readString(Paths.get(outputDOTFile));
         System.out.println("output: " + outputDOTFile);
@@ -256,7 +256,7 @@ public class GraphHandlerTest {
     @Test
     public void testDFS() throws Exception {
         GraphHandler gh = new GraphHandler();
-        gh.graphImporter("src/test/test1.dot");
+        gh.graphImporterFromDot("src/test/test1.dot");
         ArrayList<String> expected = new ArrayList<>();
         expected.add("Google");
         expected.add("Meta");
@@ -292,7 +292,7 @@ public class GraphHandlerTest {
     @Test
     public void testBFS() throws Exception {
         GraphHandler gh = new GraphHandler();
-        gh.graphImporter("src/test/test1.dot");
+        gh.graphImporterFromDot("src/test/test1.dot");
         ArrayList<String> expected = new ArrayList<>();
         expected.add("Google");
         expected.add("Meta");

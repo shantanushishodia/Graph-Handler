@@ -8,6 +8,13 @@ import java.util.Scanner;
  *
  */
 public class Main {
+
+    private static final String DOT_FILE_PATH = "src/companies.dot";
+    private static final String EXPECTED_GRAPH_FILE_PATH = "src/expectedGraphFile.txt";
+    private static final String EXPECTED_GRAPH_DOT_PATH = "src/expectedGraphDOT.txt";
+    private static final String OUTPUT_GRAPH_PNG_PATH = "src/OutputGraphPNG.png";
+
+
     /**
      * Enum for algo decision
      *
@@ -49,13 +56,13 @@ public class Main {
                 userSelection=input.nextInt();
                 switch (userSelection) {
                     case 1:
-                        graphHandler.graphImporterFromDot("src/companies.dot");
+                        graphHandler.graphImporterFromDot(DOT_FILE_PATH);
                         break;
                     case 2:
                         System.out.println(graphHandler.toString());
                         break;
                     case 3:
-                        graphHandler.saveGraphToFile("src/expectedGraphFile.txt");
+                        graphHandler.saveGraphToFile(EXPECTED_GRAPH_FILE_PATH);
                         break;
                     case 4:
                         System.out.println("\tInput the name for the node:");
@@ -77,10 +84,10 @@ public class Main {
                         graphHandler.addOneEdge(initialNode, targetNode);
                         break;
                     case 7:
-                        graphHandler.saveGraphToDOT("src/expectedGraphDOT.txt");
+                        graphHandler.saveGraphToDOT(EXPECTED_GRAPH_DOT_PATH);
                         break;
                     case 8:
-                        graphHandler.saveGraphToPNG("src/OutputGraphPNG.png");
+                        graphHandler.saveGraphToPNG(OUTPUT_GRAPH_PNG_PATH);
                         break;
                     case 9:
                         System.out.println("\tInput the name for the node you wish to remove:");

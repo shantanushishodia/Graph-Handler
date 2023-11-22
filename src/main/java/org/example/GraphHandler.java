@@ -302,19 +302,22 @@ public class GraphHandler {
      */
     public Path graphSearchWithAlgo(String src, String dst, Main.Algorithm algo) throws Exception {
 
-            if (algo.name() == "BFS") {
+        Path path = new Path();
+        switch (algo){
+            case BFS:
                 BFS bfs = new BFS();
-                Path path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+                path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
                 System.out.println(path.buildPath(dst));
-                return path;
-            }
-            else if (algo.name() == "DFS") {
+                break;
+            case DFS:
                 DFS dfs = new DFS();
-                Path path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+                path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
                 System.out.println(path.buildPath(dst));
-                return path;
-            }
-        return null;
+                break;
+            default:
+                return null;
+        }
+        return path;
     }
 
 }

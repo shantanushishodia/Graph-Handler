@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="">
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,11 +108,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.testRemoveNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testRemoveNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveNodes" />
+      <option name="METHOD_NAME" value="testRemoveNode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,15 +123,15 @@
       <item itemvalue="JUnit.GraphHandlerTest" />
       <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
       <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
-      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
+      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GraphHandlerTest" />
-        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
-        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
+        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
+        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +312,28 @@
       <option name="project" value="LOCAL" />
       <updated>1699227183177</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Refactor 1: Encapsulated pathMap and added getPathMap function">
+      <created>1700690503304</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1700690503304</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Refactor 2: renamed functions for better understanding of the code">
+      <created>1700690944566</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700690944566</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task">
+      <created>1700692390508</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1700692390508</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -362,6 +381,9 @@
     <MESSAGE value="Added DFS feature" />
     <MESSAGE value="Updated Naming scheme" />
     <MESSAGE value="Updated graphSearch API to use Path as it's return type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated graphSearch API to use Path as it's return type" />
+    <MESSAGE value="Refactor 1: Encapsulated pathMap and added getPathMap function" />
+    <MESSAGE value="Refactor 2: renamed functions for better understanding of the code" />
+    <MESSAGE value="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task" />
   </component>
 </project>

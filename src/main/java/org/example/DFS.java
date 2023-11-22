@@ -39,7 +39,7 @@ public class DFS {
         for (DefaultEdge edge : graph.outgoingEdgesOf(current)) {
             String neighbor = graph.getEdgeTarget(edge);
             if (!visited.contains(neighbor)) {
-                path.pathMap.put(neighbor, current);
+                path.getPathMap().put(neighbor, current);
                 if (dfs(graph, neighbor, destination, visited)) {
                     return true;
                 }

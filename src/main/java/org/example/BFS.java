@@ -24,7 +24,7 @@ public class BFS {
 
         queue.add(src);
         visited.add(src);
-        path.pathMap.put(src, null);
+        path.getPathMap().put(src, null);
 
         while (!queue.isEmpty()) {
             String current = queue.poll();
@@ -38,7 +38,7 @@ public class BFS {
                 if (!visited.contains(neighbor)) {
                     queue.add(neighbor);
                     visited.add(neighbor);
-                    path.pathMap.put(neighbor, current);
+                    path.getPathMap().put(neighbor, current);
                 }
             }
         }

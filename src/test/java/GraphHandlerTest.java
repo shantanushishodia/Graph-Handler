@@ -143,15 +143,9 @@ public class GraphHandlerTest {
         graphHandler.removeOneNode("Google");
         System.out.println(graphHandler.toString());
 
-        Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeOneNode("Google");
-        });
-        String expectedMessage = "Node not found";
-        String actualMessage = exception.getMessage();
-
         assertEquals(5, graphHandler.getGraph().vertexSet().size());
         assertFalse(graphHandler.getGraph().containsVertex("Google"));
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertFalse(graphHandler.getGraph().containsVertex("ABCS"));
     }
 
     /**
@@ -169,18 +163,11 @@ public class GraphHandlerTest {
         labels.add("NASA");
         assertTrue(graphHandler.removeMultipleNodes((ArrayList<String>) labels));
 
-        Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeMultipleNodes((ArrayList<String>) labels);
-        });
-        String expectedMessage = "Node not found";
-        String actualMessage = exception.getMessage();
-
         assertFalse(graphHandler.getGraph().containsVertex("NASA"));
         assertFalse(graphHandler.getGraph().containsVertex("Citadel"));
         assertEquals(5, graphHandler.getGraph().vertexSet().size());
         assertEquals(4, graphHandler.getGraph().edgeSet().size());
         assertFalse(graphHandler.getGraph().containsEdge("Citadel","NASA"));
-        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     /**

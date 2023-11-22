@@ -97,10 +97,8 @@ public class GraphHandler {
 
             return graphDetails;
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error getting graph details");
         }
-
-        return null;
     }
 
 
@@ -165,7 +163,8 @@ public class GraphHandler {
                 throw new Exception("Node not removed, encountered error", e);
             }
         } else {
-            throw new Exception("Node not found");
+            System.out.println("Node not found");
+            return false;
         }
     }
 
@@ -303,18 +302,18 @@ public class GraphHandler {
      */
     public Path graphSearchWithAlgo(String src, String dst, Main.Algorithm algo) throws Exception {
 
-        if(algo.name()=="BFS") {
-            BFS bfs = new BFS();
-            Path path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-            System.out.println(path.buildPath(dst));
-            return path;
-        }
-        else if(algo.name()=="DFS") {
-            DFS dfs = new DFS();
-            Path path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-            System.out.println(path.buildPath(dst));
-            return path;
-        }
+            if (algo.name() == "BFS") {
+                BFS bfs = new BFS();
+                Path path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+                System.out.println(path.buildPath(dst));
+                return path;
+            }
+            else if (algo.name() == "DFS") {
+                DFS dfs = new DFS();
+                Path path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
+                System.out.println(path.buildPath(dst));
+                return path;
+            }
         return null;
     }
 

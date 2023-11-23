@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Implemented Strategy pattern for BFS and DFS.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/graphrws.dot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RandomWalkSearch.java" afterDir="false" />
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RandomWalkSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RandomWalkSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700724492506</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code.">
+      <created>1700733373644</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700733373644</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -405,7 +407,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented Feature 2 which includes adding a single node and adding multiple nodes at once" />
     <MESSAGE value="Fixed a wrong switch case numbering" />
     <MESSAGE value="Implemented Feature 3 which includes adding an edge to the graph" />
     <MESSAGE value="Implemented part of Feature 4 which is saving the graph in DOT format" />
@@ -430,6 +431,7 @@
     <MESSAGE value="Refactor 6: Extracted logic in helper methods" />
     <MESSAGE value="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too" />
     <MESSAGE value="Implemented Strategy pattern for BFS and DFS." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Strategy pattern for BFS and DFS." />
+    <MESSAGE value="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code." />
   </component>
 </project>

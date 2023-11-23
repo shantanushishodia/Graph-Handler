@@ -5,6 +5,10 @@ import org.jgrapht.graph.DefaultEdge;
 
 import java.util.*;
 
+/**
+ * Class for Random Walk Search
+ *
+ */
 public class RandomWalkSearch extends GraphSearchTemplate implements GraphSearchStrategy {
 
     @Override

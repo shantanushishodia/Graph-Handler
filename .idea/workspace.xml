@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Refactor 6: Extracted logic in helper methods">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchTemplate.java" afterDir="false" />
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -357,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700706935057</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too">
+      <created>1700708165670</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1700708165670</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -411,6 +420,7 @@
     <MESSAGE value="Refactor 4: Streamlined graphSearchWithAlgo. Now uses switch case instead of if-else statements." />
     <MESSAGE value="Refactor 5: Used constants for file path for more maintainable code" />
     <MESSAGE value="Refactor 6: Extracted logic in helper methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor 6: Extracted logic in helper methods" />
+    <MESSAGE value="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too" />
   </component>
 </project>

@@ -9,10 +9,10 @@ import java.util.*;
  * Class for dfs path
  *
  */
-public class DFS extends GraphSearchTemplate {
+public class DFS extends GraphSearchTemplate implements GraphSearchStrategy {
 
     @Override
-    protected boolean search(Graph<String, DefaultEdge> graph, String current, String destination, Set<String> visited) {
+    public boolean search(Graph<String, DefaultEdge> graph, String current, String destination, Set<String> visited) {
         visited.add(current);
 
         if (current.equals(destination)) {

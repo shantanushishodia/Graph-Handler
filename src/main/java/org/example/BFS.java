@@ -9,10 +9,10 @@ import java.util.*;
  * Class for finding a path using BFS
  *
  */
-public class BFS extends GraphSearchTemplate {
+public class BFS extends GraphSearchTemplate implements GraphSearchStrategy{
 
     @Override
-    protected boolean search(Graph<String, DefaultEdge> graph, String src, String dst, Set<String> visited) {
+    public boolean search(Graph<String, DefaultEdge> graph, String src, String dst, Set<String> visited) {
         Queue<String> queue = new LinkedList<>();
         initializeQueueAndVisited(src, queue, visited);
 

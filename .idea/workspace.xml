@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code.">
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Updated Java Doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RandomWalkSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RandomWalkSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700733373644</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Updated Java Doc">
+      <created>1700733971961</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700733971961</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -407,7 +413,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed a wrong switch case numbering" />
     <MESSAGE value="Implemented Feature 3 which includes adding an edge to the graph" />
     <MESSAGE value="Implemented part of Feature 4 which is saving the graph in DOT format" />
     <MESSAGE value="Implemented the remaining part of Feature 4 which is saving the graph in PNG format" />
@@ -432,6 +437,7 @@
     <MESSAGE value="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too" />
     <MESSAGE value="Implemented Strategy pattern for BFS and DFS." />
     <MESSAGE value="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code." />
+    <MESSAGE value="Updated Java Doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Java Doc" />
   </component>
 </project>

@@ -21,4 +21,4 @@
 - ```boolean removeEdge(String srcLabel, String dstLabel)``` - Returns true if edge is removed successfully otherwise returns false if edge does not exist in the graph
 - ```void saveGraphDOT(String filePath)``` - Outputs the modified graph in DOT format to the specified file
 - ```void saveGraphPNG(String filePath)``` - Output the modified graph to a PNG file (Graph Visualization)
-- ```void GraphSearch(String src, String dst, Algorithm algo)``` - Find a path from ```src``` to ```dst``` node using BFS or DFS algorithm depending on enum specified. Possible values of the enum can be ```BFS```, ```DFS```
+- ```Path GraphSearch(String src, String dst, Algorithm algo)``` - Find a path from ```src``` to ```dst``` node using BFS or DFS or Random Walk algorithm depending on enum specified. Possible values of the enum can be ```Algorithm.BFS```, ```Algorithm.DFS``` or ```Algorithm.RANDOMWALK```

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Refactor 5: Used constants for file path for more maintainable code">
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Refactor 6: Extracted logic in helper methods">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GraphHandlerTest.testDFS">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="cse-464-sshishod" />
@@ -128,9 +130,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
-        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
         <item itemvalue="JUnit.GraphHandlerTest" />
         <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
       </list>
@@ -348,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700696335261</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Refactor 6: Extracted logic in helper methods">
+      <created>1700706935057</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1700706935057</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -401,6 +410,7 @@
     <MESSAGE value="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task" />
     <MESSAGE value="Refactor 4: Streamlined graphSearchWithAlgo. Now uses switch case instead of if-else statements." />
     <MESSAGE value="Refactor 5: Used constants for file path for more maintainable code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor 5: Used constants for file path for more maintainable code" />
+    <MESSAGE value="Refactor 6: Extracted logic in helper methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor 6: Extracted logic in helper methods" />
   </component>
 </project>

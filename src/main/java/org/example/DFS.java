@@ -9,22 +9,10 @@ import java.util.*;
  * Class for dfs path
  *
  */
-public class DFS {
-    static Path path = new Path();
-    public Path findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
+public class DFS extends GraphSearchTemplate {
 
-        validateSourceAndDestination(src, dst);
-        Set<String> visited = new HashSet<>();
-        boolean found = dfs(graph, src, dst, visited);
-
-        if (found) {
-            return path;
-        } else {
-            return null;
-        }
-    }
-
-    private static boolean dfs(Graph<String, DefaultEdge> graph, String current, String destination, Set<String> visited) {
+    @Override
+    protected boolean search(Graph<String, DefaultEdge> graph, String current, String destination, Set<String> visited) {
         visited.add(current);
 
         if (current.equals(destination)) {
@@ -35,7 +23,7 @@ public class DFS {
             String neighbor = graph.getEdgeTarget(edge);
             if (!visited.contains(neighbor)) {
                 path.getPathMap().put(neighbor, current);
-                if (dfs(graph, neighbor, destination, visited)) {
+                if (search(graph, neighbor, destination, visited)) {
                     return true;
                 }
             }
@@ -43,10 +31,5 @@ public class DFS {
 
         return false;
     }
-
-    private void validateSourceAndDestination(String src, String dst) throws Exception {
-        if (src.equals(dst)) {
-            throw new Exception("Source and destination cannot be the same node");
-        }
-    }
 }
+

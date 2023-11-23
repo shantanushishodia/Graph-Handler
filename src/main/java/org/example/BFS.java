@@ -9,21 +9,18 @@ import java.util.*;
  * Class for finding a path using BFS
  *
  */
-public class BFS {
-    public Path findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
+public class BFS extends GraphSearchTemplate {
 
-        validateSourceAndDestination(src, dst);
-        Path path = new Path();
+    @Override
+    protected boolean search(Graph<String, DefaultEdge> graph, String src, String dst, Set<String> visited) {
         Queue<String> queue = new LinkedList<>();
-        Set<String> visited = new HashSet<>();
-
-        initializeQueueAndVisited(src, queue, visited, path);
+        initializeQueueAndVisited(src, queue, visited);
 
         while (!queue.isEmpty()) {
             String current = queue.poll();
 
             if (current.equals(dst)) {
-                return path;
+                return true;
             }
 
             for (DefaultEdge edge : graph.outgoingEdgesOf(current)) {
@@ -36,18 +33,12 @@ public class BFS {
             }
         }
 
-        return null;
+        return false;
     }
-    private void initializeQueueAndVisited(String src, Queue<String> queue, Set<String> visited, Path path) {
+
+    private void initializeQueueAndVisited(String src, Queue<String> queue, Set<String> visited) {
         queue.add(src);
         visited.add(src);
         path.getPathMap().put(src, null);
     }
-
-    private void validateSourceAndDestination(String src, String dst) throws Exception {
-        if (src.equals(dst)) {
-            throw new Exception("Source and destination cannot be the same node");
-        }
-    }
-
 }

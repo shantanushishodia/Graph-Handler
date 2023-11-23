@@ -111,7 +111,7 @@ public class Main {
                         Algorithm algo;
                         try {
                             System.out.println("\tChoose Algo BFS/DFS:");
-                            algo = Algorithm.valueOf(input.next());
+                            algo = Algorithm.valueOf(input.next().toUpperCase());
                         } catch (Exception e) {
                             System.out.println("\tProvide the correct algo: BFS/DFS");
                             break;

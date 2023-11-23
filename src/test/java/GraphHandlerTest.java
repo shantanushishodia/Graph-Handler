@@ -1,9 +1,6 @@
 
 
-import org.example.BFS;
-import org.example.DFS;
-import org.example.GraphHandler;
-import org.example.Path;
+import org.example.*;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.junit.jupiter.api.BeforeEach;
@@ -236,12 +233,12 @@ public class GraphHandlerTest {
     }
 
     /**
-     * Function to test DFS (with edge cases)
+     * Function to test DFS Using Template(with edge cases)
      *
      * @throws Exception
      */
     @Test
-    public void testDFS() throws Exception {
+    public void testDFSUsingTemplate() throws Exception {
         GraphHandler gh = new GraphHandler();
         gh.graphImporterFromDot("src/test/test1.dot");
         ArrayList<String> expected = new ArrayList<>();
@@ -254,6 +251,7 @@ public class GraphHandlerTest {
         Graph<String, DefaultEdge> currGraph = gh.getGraph();
         DFS dfs = new DFS();
         Path result = dfs.findPath(currGraph, "Google", "Tesla");
+
         assertNotNull(result);
         assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
         assertEquals(expectedString, result.buildPath("Tesla"));
@@ -272,12 +270,46 @@ public class GraphHandlerTest {
     }
 
     /**
-     * Function to test BFS (with edge cases)
+     * Function to test DFS Using Strategy  (with edge cases)
      *
      * @throws Exception
      */
     @Test
-    public void testBFS() throws Exception {
+    public void testDFSUsingStrategy() throws Exception {
+        GraphHandler gh = new GraphHandler();
+        gh.graphImporterFromDot("src/test/test1.dot");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Google");
+        expected.add("Meta");
+        expected.add("Ford");
+        expected.add("Tesla");
+        String expectedString = "Google -> Meta -> Ford -> Tesla";
+
+        Path result = gh.graphSearchWithAlgo("Google", "Tesla", Main.Algorithm.DFS);
+
+        assertNotNull(result);
+        assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
+        assertEquals(expectedString, result.buildPath("Tesla"));
+
+        result = gh.graphSearchWithAlgo("Tesla", "Google", Main.Algorithm.DFS);
+        assertNull(result);
+
+        Exception exception = assertThrows(Exception.class, () -> {
+            gh.graphSearchWithAlgo("Google", "Google", Main.Algorithm.DFS);
+        });
+        String expectedMessage = "Source and destination cannot be the same node";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+
+    }
+
+    /**
+     * Function to test BFS using Template (with edge cases)
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testBFSUsingTemplate() throws Exception {
         GraphHandler gh = new GraphHandler();
         gh.graphImporterFromDot("src/test/test1.dot");
         ArrayList<String> expected = new ArrayList<>();
@@ -290,6 +322,7 @@ public class GraphHandlerTest {
         Graph<String, DefaultEdge> currGraph = gh.getGraph();
         BFS bfs = new BFS();
         Path result = bfs.findPath(currGraph, "Google", "Tesla");
+
         assertNotNull(result);
         assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
         assertEquals(expectedString, result.buildPath("Tesla"));
@@ -306,6 +339,43 @@ public class GraphHandlerTest {
 
 
     }
+
+    /**
+     * Function to test BFS Using Strategy(with edge cases)
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testBFSUsingStrategy() throws Exception {
+        GraphHandler gh = new GraphHandler();
+        gh.graphImporterFromDot("src/test/test1.dot");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Google");
+        expected.add("Meta");
+        expected.add("Ford");
+        expected.add("Tesla");
+        String expectedString = "Google -> Meta -> Ford -> Tesla";
+
+        Path result = gh.graphSearchWithAlgo("Google", "Tesla", Main.Algorithm.BFS);
+
+        assertNotNull(result);
+        assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
+        assertEquals(expectedString, result.buildPath("Tesla"));
+
+        result = gh.graphSearchWithAlgo("Tesla", "Google", Main.Algorithm.BFS);
+        assertNull(result);
+
+        Exception exception = assertThrows(Exception.class, () -> {
+            gh.graphSearchWithAlgo("Google", "Google", Main.Algorithm.BFS);
+        });
+        String expectedMessage = "Source and destination cannot be the same node";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+
+
+    }
+
+
 
 
 

@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Main {
 
     private static final String DOT_FILE_PATH = "src/companies.dot";
+    private static final String DOT_FILE_PATH_RWS = "src/main/java/graphrws.dot";
     private static final String EXPECTED_GRAPH_FILE_PATH = "src/expectedGraphFile.txt";
     private static final String EXPECTED_GRAPH_DOT_PATH = "src/expectedGraphDOT.txt";
     private static final String OUTPUT_GRAPH_PNG_PATH = "src/OutputGraphPNG.png";
@@ -19,9 +20,10 @@ public class Main {
      * Enum for algo decision
      *
      */
-    enum Algorithm {
+    public enum Algorithm {
         BFS,
-        DFS
+        DFS,
+        RANDOMWALK
     }
 
     /**
@@ -110,12 +112,14 @@ public class Main {
                     case 12:
                         Algorithm algo;
                         try {
-                            System.out.println("\tChoose Algo BFS/DFS:");
+                            System.out.println("\tChoose Algo BFS/DFS/RandomWalk:");
                             algo = Algorithm.valueOf(input.next().toUpperCase());
                         } catch (Exception e) {
-                            System.out.println("\tProvide the correct algo: BFS/DFS");
+                            System.out.println("\tProvide the correct algo: BFS/DFS/RandomWalk");
                             break;
                         }
+                        if(algo.name() == Algorithm.RANDOMWALK.name())
+                            graphHandler.graphImporterFromDot(DOT_FILE_PATH_RWS);
                         System.out.println("\tInput source node");
                         String srcNode = input.next();
                         System.out.println("\tInput destination node");

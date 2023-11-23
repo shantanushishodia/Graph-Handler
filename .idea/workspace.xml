@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchStrategy.java" afterDir="false" />
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Implemented Strategy pattern for BFS and DFS.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphrws.dot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RandomWalkSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphSearchTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GraphHandlerTest.testBFSUsingStrategy">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="cse-464-sshishod" />
@@ -84,20 +85,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cse-464-sshishod" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GraphHandlerTest.testBFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
       <option name="METHOD_NAME" value="testBFS" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphHandlerTest.testBFSUsingStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cse-464-sshishod" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
+      <option name="METHOD_NAME" value="testBFSUsingStrategy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,11 +115,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.testRemoveNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testDFSUsingStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveNode" />
+      <option name="METHOD_NAME" value="testDFSUsingStrategy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,18 +127,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.GraphHandlerTest" />
+      <item itemvalue="JUnit.GraphHandlerTest.testBFSUsingStrategy" />
+      <item itemvalue="JUnit.GraphHandlerTest.testDFSUsingStrategy" />
       <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
       <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
-      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphHandlerTest.testBFSUsingStrategy" />
+        <item itemvalue="JUnit.GraphHandlerTest.testDFSUsingStrategy" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
         <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
-        <item itemvalue="JUnit.GraphHandlerTest" />
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
       </list>
     </recent_temporary>
   </component>
@@ -366,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700708165670</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Implemented Strategy pattern for BFS and DFS.">
+      <created>1700724492506</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700724492506</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -396,7 +405,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file." />
     <MESSAGE value="Implemented Feature 2 which includes adding a single node and adding multiple nodes at once" />
     <MESSAGE value="Fixed a wrong switch case numbering" />
     <MESSAGE value="Implemented Feature 3 which includes adding an edge to the graph" />
@@ -421,6 +429,7 @@
     <MESSAGE value="Refactor 5: Used constants for file path for more maintainable code" />
     <MESSAGE value="Refactor 6: Extracted logic in helper methods" />
     <MESSAGE value="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too" />
+    <MESSAGE value="Implemented Strategy pattern for BFS and DFS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Strategy pattern for BFS and DFS." />
   </component>
 </project>

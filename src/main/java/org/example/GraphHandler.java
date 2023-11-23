@@ -308,13 +308,16 @@ public class GraphHandler {
         switch (algo) {
             case BFS -> searchAlgo = new BFS();
             case DFS -> searchAlgo = new DFS();
+            case RANDOMWALK -> searchAlgo = new RandomWalkSearch();
             default -> {
                 return null;
             }
         }
 
         gsc.setAlgo(searchAlgo);
-        return gsc.executeAlgo(primaryGraph.iterables().getGraph(),src, dst);
+        Path path = gsc.executeAlgo(primaryGraph.iterables().getGraph(),src, dst);
+
+        return path;
     }
 
 }

@@ -12,13 +12,8 @@ import java.util.*;
 public class DFS {
     static Path path = new Path();
     public Path findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
-        try {
-            if(src.equals(dst)){
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            throw new Exception("Source and destination cannot be the same node", e);
-        }
+
+        validateSourceAndDestination(src, dst);
         Set<String> visited = new HashSet<>();
         boolean found = dfs(graph, src, dst, visited);
 
@@ -47,5 +42,11 @@ public class DFS {
         }
 
         return false;
+    }
+
+    private void validateSourceAndDestination(String src, String dst) throws Exception {
+        if (src.equals(dst)) {
+            throw new Exception("Source and destination cannot be the same node");
+        }
     }
 }

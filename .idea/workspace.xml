@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Refactor 4: Streamlined graphSearchWithAlgo. Now uses switch case instead of if-else statements.">
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Refactor 5: Used constants for file path for more maintainable code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GraphHandlerTest.testDFS">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="cse-464-sshishod" />
@@ -126,10 +128,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
+        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GraphHandlerTest" />
-        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
-        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
         <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
       </list>
     </recent_temporary>
@@ -339,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700694754708</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Refactor 5: Used constants for file path for more maintainable code">
+      <created>1700696335261</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1700696335261</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -391,6 +400,7 @@
     <MESSAGE value="Refactor 2: renamed functions for better understanding of the code" />
     <MESSAGE value="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task" />
     <MESSAGE value="Refactor 4: Streamlined graphSearchWithAlgo. Now uses switch case instead of if-else statements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor 4: Streamlined graphSearchWithAlgo. Now uses switch case instead of if-else statements." />
+    <MESSAGE value="Refactor 5: Used constants for file path for more maintainable code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor 5: Used constants for file path for more maintainable code" />
   </component>
 </project>

@@ -11,20 +11,13 @@ import java.util.*;
  */
 public class BFS {
     public Path findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
-        try {
-            if(src.equals(dst)){
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            throw new Exception("Source and destination cannot be the same node", e);
-        }
+
+        validateSourceAndDestination(src, dst);
         Path path = new Path();
         Queue<String> queue = new LinkedList<>();
         Set<String> visited = new HashSet<>();
 
-        queue.add(src);
-        visited.add(src);
-        path.getPathMap().put(src, null);
+        initializeQueueAndVisited(src, queue, visited, path);
 
         while (!queue.isEmpty()) {
             String current = queue.poll();
@@ -44,6 +37,17 @@ public class BFS {
         }
 
         return null;
+    }
+    private void initializeQueueAndVisited(String src, Queue<String> queue, Set<String> visited, Path path) {
+        queue.add(src);
+        visited.add(src);
+        path.getPathMap().put(src, null);
+    }
+
+    private void validateSourceAndDestination(String src, String dst) throws Exception {
+        if (src.equals(dst)) {
+            throw new Exception("Source and destination cannot be the same node");
+        }
     }
 
 }

@@ -9,28 +9,18 @@ import java.util.*;
  * Class for finding a path using BFS
  *
  */
-public class BFS {
-    public Path findPath(Graph<String, DefaultEdge> graph, String src, String dst) throws Exception {
-        try {
-            if(src.equals(dst)){
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            throw new Exception("Source and destination cannot be the same node", e);
-        }
-        Path path = new Path();
-        Queue<String> queue = new LinkedList<>();
-        Set<String> visited = new HashSet<>();
+public class BFS extends GraphSearchTemplate implements GraphSearchStrategy{
 
-        queue.add(src);
-        visited.add(src);
-        path.pathMap.put(src, null);
+    @Override
+    public boolean search(Graph<String, DefaultEdge> graph, String src, String dst, Set<String> visited) {
+        Queue<String> queue = new LinkedList<>();
+        initializeQueueAndVisited(src, queue, visited);
 
         while (!queue.isEmpty()) {
             String current = queue.poll();
 
             if (current.equals(dst)) {
-                return path;
+                return true;
             }
 
             for (DefaultEdge edge : graph.outgoingEdgesOf(current)) {
@@ -38,12 +28,17 @@ public class BFS {
                 if (!visited.contains(neighbor)) {
                     queue.add(neighbor);
                     visited.add(neighbor);
-                    path.pathMap.put(neighbor, current);
+                    path.getPathMap().put(neighbor, current);
                 }
             }
         }
 
-        return null;
+        return false;
     }
 
+    private void initializeQueueAndVisited(String src, Queue<String> queue, Set<String> visited) {
+        queue.add(src);
+        visited.add(src);
+        path.getPathMap().put(src, null);
+    }
 }

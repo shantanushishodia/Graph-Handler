@@ -8,13 +8,22 @@ import java.util.Scanner;
  *
  */
 public class Main {
+
+    private static final String DOT_FILE_PATH = "src/companies.dot";
+    private static final String DOT_FILE_PATH_RWS = "src/main/java/graphrws.dot";
+    private static final String EXPECTED_GRAPH_FILE_PATH = "src/expectedGraphFile.txt";
+    private static final String EXPECTED_GRAPH_DOT_PATH = "src/expectedGraphDOT.txt";
+    private static final String OUTPUT_GRAPH_PNG_PATH = "src/OutputGraphPNG.png";
+
+
     /**
      * Enum for algo decision
      *
      */
-    enum Algorithm {
+    public enum Algorithm {
         BFS,
-        DFS
+        DFS,
+        RANDOMWALK
     }
 
     /**
@@ -49,13 +58,13 @@ public class Main {
                 userSelection=input.nextInt();
                 switch (userSelection) {
                     case 1:
-                        graphHandler.graphImporter("src/companies.dot");
+                        graphHandler.graphImporterFromDot(DOT_FILE_PATH);
                         break;
                     case 2:
                         System.out.println(graphHandler.toString());
                         break;
                     case 3:
-                        graphHandler.saveGraphToFile("src/expectedGraphFile.txt");
+                        graphHandler.saveGraphToFile(EXPECTED_GRAPH_FILE_PATH);
                         break;
                     case 4:
                         System.out.println("\tInput the name for the node:");
@@ -74,46 +83,48 @@ public class Main {
                         String initialNode = input.next();
                         System.out.println("\tInput target node for the edge");
                         String targetNode = input.next();
-                        graphHandler.addEdge(initialNode, targetNode);
+                        graphHandler.addOneEdge(initialNode, targetNode);
                         break;
                     case 7:
-                        graphHandler.saveGraphDOT("src/expectedGraphDOT.txt");
+                        graphHandler.saveGraphToDOT(EXPECTED_GRAPH_DOT_PATH);
                         break;
                     case 8:
-                        graphHandler.saveGraphPNG("src/OutputGraphPNG.png");
+                        graphHandler.saveGraphToPNG(OUTPUT_GRAPH_PNG_PATH);
                         break;
                     case 9:
                         System.out.println("\tInput the name for the node you wish to remove:");
-                        graphHandler.removeNode(input.next());
+                        graphHandler.removeOneNode(input.next());
                     case 10:
                         System.out.println("\tEnter the number of nodes you want to remove:");
                         int rn= input.nextInt();
                         ArrayList<String> listOfNodesToBeRemoved = new ArrayList<>();
                         for(int i=0;i<rn;i++)
                             listOfNodesToBeRemoved.add(input.next());
-                        graphHandler.removeNodes(listOfNodesToBeRemoved);
+                        graphHandler.removeMultipleNodes(listOfNodesToBeRemoved);
                         break;
                     case 11:
                         System.out.println("\tInput source node for the edge");
                         String initialNodeToRemove = input.next();
                         System.out.println("\tInput target node for the edge");
                         String targetNodeToRemove = input.next();
-                        graphHandler.removeEdge(initialNodeToRemove, targetNodeToRemove);
+                        graphHandler.removeOneEdge(initialNodeToRemove, targetNodeToRemove);
                         break;
                     case 12:
                         Algorithm algo;
                         try {
-                            System.out.println("\tChoose Algo BFS/DFS:");
-                            algo = Algorithm.valueOf(input.next());
+                            System.out.println("\tChoose Algo BFS/DFS/RandomWalk:");
+                            algo = Algorithm.valueOf(input.next().toUpperCase());
                         } catch (Exception e) {
-                            System.out.println("\tProvide the correct algo: BFS/DFS");
+                            System.out.println("\tProvide the correct algo: BFS/DFS/RandomWalk");
                             break;
                         }
+                        if(algo.name() == Algorithm.RANDOMWALK.name())
+                            graphHandler.graphImporterFromDot(DOT_FILE_PATH_RWS);
                         System.out.println("\tInput source node");
                         String srcNode = input.next();
                         System.out.println("\tInput destination node");
                         String dstNode = input.next();
-                        graphHandler.graphSearch(srcNode, dstNode, algo);
+                        graphHandler.graphSearchWithAlgo(srcNode, dstNode, algo);
                         break;
                     case 0:
                         break;

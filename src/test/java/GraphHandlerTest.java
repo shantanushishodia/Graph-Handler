@@ -1,9 +1,6 @@
 
 
-import org.example.BFS;
-import org.example.DFS;
-import org.example.GraphHandler;
-import org.example.Path;
+import org.example.*;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,7 +28,7 @@ public class GraphHandlerTest {
     @BeforeEach
     public void initialize() throws Exception {
         graphHandler = new GraphHandler();
-        graphHandler.graphImporter("src/test/test1.dot");
+        graphHandler.graphImporterFromDot("src/test/test1.dot");
     }
 
     /**
@@ -51,7 +48,7 @@ public class GraphHandlerTest {
         System.out.println(graphHandler.toString());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.graphImporter("src/fakeFile.dot");
+            graphHandler.graphImporterFromDot("src/fakeFile.dot");
         });
 
         String expectedMessage = "Unable to read file, encountered error";
@@ -140,18 +137,12 @@ public class GraphHandlerTest {
      */
     @Test
     public void testRemoveNode() throws Exception {
-        graphHandler.removeNode("Google");
+        graphHandler.removeOneNode("Google");
         System.out.println(graphHandler.toString());
-
-        Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeNode("Google");
-        });
-        String expectedMessage = "Node not found";
-        String actualMessage = exception.getMessage();
 
         assertEquals(5, graphHandler.getGraph().vertexSet().size());
         assertFalse(graphHandler.getGraph().containsVertex("Google"));
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertFalse(graphHandler.getGraph().containsVertex("ABCS"));
     }
 
     /**
@@ -162,25 +153,18 @@ public class GraphHandlerTest {
     @Test
     public void testRemoveNodes() throws Exception {
         graphHandler.addOneNode("Citadel");
-        graphHandler.addEdge("Citadel","NASA");
+        graphHandler.addOneEdge("Citadel","NASA");
         List<String> labels = new ArrayList<>();
         labels.add("Google");
         labels.add("Citadel");
         labels.add("NASA");
-        assertTrue(graphHandler.removeNodes((ArrayList<String>) labels));
-
-        Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeNodes((ArrayList<String>) labels);
-        });
-        String expectedMessage = "Node not found";
-        String actualMessage = exception.getMessage();
+        assertTrue(graphHandler.removeMultipleNodes((ArrayList<String>) labels));
 
         assertFalse(graphHandler.getGraph().containsVertex("NASA"));
         assertFalse(graphHandler.getGraph().containsVertex("Citadel"));
         assertEquals(5, graphHandler.getGraph().vertexSet().size());
         assertEquals(4, graphHandler.getGraph().edgeSet().size());
         assertFalse(graphHandler.getGraph().containsEdge("Citadel","NASA"));
-        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     /**
@@ -190,11 +174,11 @@ public class GraphHandlerTest {
      */
     @Test
     public void testAddEdge() throws Exception {
-        graphHandler.addEdge("Google", "Ford");
+        graphHandler.addOneEdge("Google", "Ford");
         System.out.println(graphHandler.toString());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.addEdge("Google", "Meta");
+            graphHandler.addOneEdge("Google", "Meta");
         });
         String expectedMessage = "Edge already present in the graph";
         String actualMessage = exception.getMessage();
@@ -213,11 +197,11 @@ public class GraphHandlerTest {
     @Test
     public void testRemoveEdge() throws Exception {
 
-        graphHandler.removeEdge("Meta", "Ford");
+        graphHandler.removeOneEdge("Meta", "Ford");
         System.out.println(graphHandler.toString());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            graphHandler.removeEdge("Meta", "Ford");
+            graphHandler.removeOneEdge("Meta", "Ford");
         });
         String expectedMessage = "Edge not present in the graph";
         String actualMessage = exception.getMessage();
@@ -240,7 +224,7 @@ public class GraphHandlerTest {
     @Test
     public void testOutputDOTGraph() throws Exception {
         String outputDOTFile = "src/outputDOTFile.dot";
-        graphHandler.saveGraphDOT(outputDOTFile);
+        graphHandler.saveGraphToDOT(outputDOTFile);
 
         String output = Files.readString(Paths.get(outputDOTFile));
         System.out.println("output: " + outputDOTFile);
@@ -249,14 +233,14 @@ public class GraphHandlerTest {
     }
 
     /**
-     * Function to test DFS (with edge cases)
+     * Function to test DFS Using Template(with edge cases)
      *
      * @throws Exception
      */
     @Test
-    public void testDFS() throws Exception {
+    public void testDFSUsingTemplate() throws Exception {
         GraphHandler gh = new GraphHandler();
-        gh.graphImporter("src/test/test1.dot");
+        gh.graphImporterFromDot("src/test/test1.dot");
         ArrayList<String> expected = new ArrayList<>();
         expected.add("Google");
         expected.add("Meta");
@@ -267,6 +251,7 @@ public class GraphHandlerTest {
         Graph<String, DefaultEdge> currGraph = gh.getGraph();
         DFS dfs = new DFS();
         Path result = dfs.findPath(currGraph, "Google", "Tesla");
+
         assertNotNull(result);
         assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
         assertEquals(expectedString, result.buildPath("Tesla"));
@@ -285,14 +270,48 @@ public class GraphHandlerTest {
     }
 
     /**
-     * Function to test BFS (with edge cases)
+     * Function to test DFS Using Strategy  (with edge cases)
      *
      * @throws Exception
      */
     @Test
-    public void testBFS() throws Exception {
+    public void testDFSUsingStrategy() throws Exception {
         GraphHandler gh = new GraphHandler();
-        gh.graphImporter("src/test/test1.dot");
+        gh.graphImporterFromDot("src/test/test1.dot");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Google");
+        expected.add("Meta");
+        expected.add("Ford");
+        expected.add("Tesla");
+        String expectedString = "Google -> Meta -> Ford -> Tesla";
+
+        Path result = gh.graphSearchWithAlgo("Google", "Tesla", Main.Algorithm.DFS);
+
+        assertNotNull(result);
+        assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
+        assertEquals(expectedString, result.buildPath("Tesla"));
+
+        result = gh.graphSearchWithAlgo("Tesla", "Google", Main.Algorithm.DFS);
+        assertNull(result);
+
+        Exception exception = assertThrows(Exception.class, () -> {
+            gh.graphSearchWithAlgo("Google", "Google", Main.Algorithm.DFS);
+        });
+        String expectedMessage = "Source and destination cannot be the same node";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+
+    }
+
+    /**
+     * Function to test BFS using Template (with edge cases)
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testBFSUsingTemplate() throws Exception {
+        GraphHandler gh = new GraphHandler();
+        gh.graphImporterFromDot("src/test/test1.dot");
         ArrayList<String> expected = new ArrayList<>();
         expected.add("Google");
         expected.add("Meta");
@@ -303,6 +322,7 @@ public class GraphHandlerTest {
         Graph<String, DefaultEdge> currGraph = gh.getGraph();
         BFS bfs = new BFS();
         Path result = bfs.findPath(currGraph, "Google", "Tesla");
+
         assertNotNull(result);
         assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
         assertEquals(expectedString, result.buildPath("Tesla"));
@@ -319,6 +339,43 @@ public class GraphHandlerTest {
 
 
     }
+
+    /**
+     * Function to test BFS Using Strategy(with edge cases)
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testBFSUsingStrategy() throws Exception {
+        GraphHandler gh = new GraphHandler();
+        gh.graphImporterFromDot("src/test/test1.dot");
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Google");
+        expected.add("Meta");
+        expected.add("Ford");
+        expected.add("Tesla");
+        String expectedString = "Google -> Meta -> Ford -> Tesla";
+
+        Path result = gh.graphSearchWithAlgo("Google", "Tesla", Main.Algorithm.BFS);
+
+        assertNotNull(result);
+        assertEquals(expected, Arrays.asList(result.buildPath("Tesla").split(" -> ")));
+        assertEquals(expectedString, result.buildPath("Tesla"));
+
+        result = gh.graphSearchWithAlgo("Tesla", "Google", Main.Algorithm.BFS);
+        assertNull(result);
+
+        Exception exception = assertThrows(Exception.class, () -> {
+            gh.graphSearchWithAlgo("Google", "Google", Main.Algorithm.BFS);
+        });
+        String expectedMessage = "Source and destination cannot be the same node";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+
+
+    }
+
+
 
 
 

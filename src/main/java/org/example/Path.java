@@ -8,7 +8,10 @@ import java.util.*;
  *
  */
 public class Path {
-    public Map<String, String> pathMap = new HashMap<>();
+    private Map<String, String> pathMap = new HashMap<>();
+    public Map<String,String > getPathMap (){
+        return pathMap;
+    }
     public String buildPath(String destination) {
         List<String> path = new ArrayList<>();
         String current = destination;

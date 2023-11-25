@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Updated Naming scheme">
+    <list default="true" id="d3a7806d-1cb6-48e1-a8e1-45e4ae8b5541" name="Changes" comment="Updated Java Doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +15,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -27,11 +23,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dfs" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/Path.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -44,17 +42,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/shant/Desktop/464/cse-464-sshishod-part2.zip",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shant/Desktop/464/cse-464-sshishod-part2.zip&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shant\IdeaProjects\SS_P1\src\test" />
@@ -67,7 +65,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GraphHandlerTest.testDFS">
+  <component name="RunManager" selected="JUnit.GraphHandlerTest.testBFSUsingStrategy">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="cse-464-sshishod" />
@@ -91,6 +89,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GraphHandlerTest.testBFSUsingStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cse-464-sshishod" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
+      <option name="METHOD_NAME" value="testBFSUsingStrategy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GraphHandlerTest.testDFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
@@ -101,21 +109,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphHandlerTest.testRemoveNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphHandlerTest.testDFSUsingStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cse-464-sshishod" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveNode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphHandlerTest.testRemoveNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cse-464-sshishod" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphHandlerTest" />
-      <option name="METHOD_NAME" value="testRemoveNodes" />
+      <option name="METHOD_NAME" value="testDFSUsingStrategy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,18 +121,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.GraphHandlerTest.testBFSUsingStrategy" />
+      <item itemvalue="JUnit.GraphHandlerTest.testDFSUsingStrategy" />
       <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
       <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
-      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
-      <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
-        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+        <item itemvalue="JUnit.GraphHandlerTest.testBFSUsingStrategy" />
+        <item itemvalue="JUnit.GraphHandlerTest.testDFSUsingStrategy" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNodes" />
-        <item itemvalue="JUnit.GraphHandlerTest.testRemoveNode" />
+        <item itemvalue="JUnit.GraphHandlerTest.testBFS" />
+        <item itemvalue="JUnit.GraphHandlerTest.testDFS" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +306,84 @@
       <option name="project" value="LOCAL" />
       <updated>1699209636603</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Updated graphSearch API to use Path as it's return type">
+      <created>1699227183177</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699227183177</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Refactor 1: Encapsulated pathMap and added getPathMap function">
+      <created>1700690503304</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1700690503304</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Refactor 2: renamed functions for better understanding of the code">
+      <created>1700690944566</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700690944566</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task">
+      <created>1700692390508</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1700692390508</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refactor 4: Streamlined graphSearchWithAlgo. Now uses switch case instead of if-else statements.">
+      <created>1700694754708</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700694754708</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Refactor 5: Used constants for file path for more maintainable code">
+      <created>1700696335261</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1700696335261</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Refactor 6: Extracted logic in helper methods">
+      <created>1700706935057</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1700706935057</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too">
+      <created>1700708165670</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1700708165670</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Implemented Strategy pattern for BFS and DFS.">
+      <created>1700724492506</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700724492506</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code.">
+      <created>1700733373644</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700733373644</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Updated Java Doc">
+      <created>1700733971961</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700733971961</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -338,9 +413,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented Feature 1 which includes importing a graph, getting details and saving the graph to a file." />
-    <MESSAGE value="Implemented Feature 2 which includes adding a single node and adding multiple nodes at once" />
-    <MESSAGE value="Fixed a wrong switch case numbering" />
     <MESSAGE value="Implemented Feature 3 which includes adding an edge to the graph" />
     <MESSAGE value="Implemented part of Feature 4 which is saving the graph in DOT format" />
     <MESSAGE value="Implemented the remaining part of Feature 4 which is saving the graph in PNG format" />
@@ -355,6 +427,17 @@
     <MESSAGE value="Removed Debugging Outputs" />
     <MESSAGE value="Added DFS feature" />
     <MESSAGE value="Updated Naming scheme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Naming scheme" />
+    <MESSAGE value="Updated graphSearch API to use Path as it's return type" />
+    <MESSAGE value="Refactor 1: Encapsulated pathMap and added getPathMap function" />
+    <MESSAGE value="Refactor 2: renamed functions for better understanding of the code" />
+    <MESSAGE value="Refactor 3: improved consistency of exception handling and removed redundancy of performing the same task" />
+    <MESSAGE value="Refactor 4: Streamlined graphSearchWithAlgo. Now uses switch case instead of if-else statements." />
+    <MESSAGE value="Refactor 5: Used constants for file path for more maintainable code" />
+    <MESSAGE value="Refactor 6: Extracted logic in helper methods" />
+    <MESSAGE value="Implemented Template pattern for BFS and DFS. Some minor quality of life changes too" />
+    <MESSAGE value="Implemented Strategy pattern for BFS and DFS." />
+    <MESSAGE value="Implemented RandomWalkSearch using both Template and Strategy patterns. Added separate test cases for BFS and DFS using strategy and template pattern. Use DOT file provided by the prof when using RandomWalkSearch. Refactored multiple areas for clean code." />
+    <MESSAGE value="Updated Java Doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Java Doc" />
   </component>
 </project>

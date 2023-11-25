@@ -49,7 +49,7 @@ public class GraphHandler {
      * @param filePath
      * @throws Exception
      */
-    public void graphImporter(String filePath) throws Exception {
+    public void graphImporterFromDot(String filePath) throws Exception {
         String fileData =null;
         try {
             fileData = Files.readString(Paths.get(filePath));
@@ -97,10 +97,8 @@ public class GraphHandler {
 
             return graphDetails;
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error getting graph details");
         }
-
-        return null;
     }
 
 
@@ -156,7 +154,7 @@ public class GraphHandler {
      * Function for removing a node
      *
      */
-    public boolean removeNode(String label) throws Exception {
+    public boolean removeOneNode(String label) throws Exception {
         if (primaryGraph.containsVertex(label)) {
             try {
                 primaryGraph.removeVertex(label);
@@ -165,7 +163,8 @@ public class GraphHandler {
                 throw new Exception("Node not removed, encountered error", e);
             }
         } else {
-            throw new Exception("Node not found");
+            System.out.println("Node not found");
+            return false;
         }
     }
 
@@ -177,10 +176,10 @@ public class GraphHandler {
      * @return
      * @throws Exception
      */
-    public boolean removeNodes(ArrayList<String> labels) throws Exception {
+    public boolean removeMultipleNodes(ArrayList<String> labels) throws Exception {
         ArrayList<String> nodesFailed = new ArrayList<>();
         for (String label : labels) {
-            if (!removeNode(label)) {
+            if (!removeOneNode(label)) {
                 nodesFailed.add(label);
             }
         }
@@ -200,7 +199,7 @@ public class GraphHandler {
      * @return
      * @throws Exception
      */
-    public boolean addEdge(String initialNode, String targetNode) throws Exception {
+    public boolean addOneEdge(String initialNode, String targetNode) throws Exception {
         try {
             if (primaryGraph.containsEdge(initialNode, targetNode)) {
                 System.out.println("\tEdge already present in the graph");
@@ -229,7 +228,7 @@ public class GraphHandler {
      * @return
      * @throws Exception
      */
-    public boolean removeEdge(String srcLabel, String dstLabel) throws Exception {
+    public boolean removeOneEdge(String srcLabel, String dstLabel) throws Exception {
         try {
             if (primaryGraph.containsEdge(srcLabel, dstLabel)) {
                 primaryGraph.removeEdge(srcLabel, dstLabel);
@@ -248,7 +247,7 @@ public class GraphHandler {
      * @param filePath
      * @throws Exception
      */
-    public void saveGraphDOT(String filePath) throws Exception {
+    public void saveGraphToDOT(String filePath) throws Exception {
         DOTExporter<String, DefaultEdge> graphExporter = new DOTExporter<>();
         StringWriter writer = new StringWriter();
         String stringDOT;
@@ -275,7 +274,7 @@ public class GraphHandler {
      * @param filePath
      * @throws Exception
      */
-    public void saveGraphPNG(String filePath) throws Exception {
+    public void saveGraphToPNG(String filePath) throws Exception {
         JGraphXAdapter<String, DefaultEdge> adapterForGraph = new JGraphXAdapter<String, DefaultEdge>(primaryGraph);
         mxIGraphLayout layout = new mxCircleLayout(adapterForGraph);
         try {
@@ -301,21 +300,24 @@ public class GraphHandler {
      * @param algo
      * @return
      */
-    public Path graphSearch(String src, String dst, Main.Algorithm algo) throws Exception {
+    public Path graphSearchWithAlgo(String src, String dst, Main.Algorithm algo) throws Exception {
 
-        if(algo.name()=="BFS") {
-            BFS bfs = new BFS();
-            Path path = bfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-            System.out.println(path.buildPath(dst));
-            return path;
+        GraphSearchContext gsc = new GraphSearchContext();
+        GraphSearchStrategy searchAlgo;
+
+        switch (algo) {
+            case BFS -> searchAlgo = new BFS();
+            case DFS -> searchAlgo = new DFS();
+            case RANDOMWALK -> searchAlgo = new RandomWalkSearch();
+            default -> {
+                return null;
+            }
         }
-        else if(algo.name()=="DFS") {
-            DFS dfs = new DFS();
-            Path path = dfs.findPath(primaryGraph.iterables().getGraph(), src, dst);
-            System.out.println(path.buildPath(dst));
-            return path;
-        }
-        return null;
+
+        gsc.setAlgo(searchAlgo);
+        Path path = gsc.executeAlgo(primaryGraph.iterables().getGraph(),src, dst);
+
+        return path;
     }
 
 }

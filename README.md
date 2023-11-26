@@ -22,3 +22,60 @@
 - ```void saveGraphDOT(String filePath)``` - Outputs the modified graph in DOT format to the specified file
 - ```void saveGraphPNG(String filePath)``` - Output the modified graph to a PNG file (Graph Visualization)
 - ```Path GraphSearch(String src, String dst, Algorithm algo)``` - Find a path from ```src``` to ```dst``` node using BFS or DFS or Random Walk algorithm depending on enum specified. Possible values of the enum can be ```Algorithm.BFS```, ```Algorithm.DFS``` or ```Algorithm.RANDOMWALK```
+
+### Example Code
+- Creating a new GraphHandler object
+```java
+GraphHandler gh = new GraphHandler();
+```
+- Parsing the graph and printing information
+```java
+gh.graphImporterFromDot("*PROVIDE DOT FILE PATH*");
+System.out.println(gh.toString());
+gh.saveGraphToFile("*PROVIDE PATH FOR SAVING FILE*");
+```
+- Adding and Removing nodes
+```java
+gh.addOneNode("NASA");
+gh.removeOneNode("NASA");
+List<String> labels = new ArrayList<>();
+labels.add("NASA");
+labels.add("Citadel");
+labels.add("Microsoft");
+gh.addMultipleNodes((ArrayList<String>) labels);
+List<String> removeLabels = new ArrayList<>();
+removeLabels.add("Google");
+removeLabels.add("Citadel");
+assertTrue(gh.removeMultipleNodes((ArrayList<String>) removeLabels));
+```
+- Adding and removing edges
+```java
+gh.addOneEdge("Google", "Ford");
+gh.removeOneEdge("Meta", "Ford");
+```
+- Output graph as DOT and PNG
+```java
+gh.saveGraphToDOT("*PROVIDE PATH TO SAVE AS DOT FILE*");
+gh.saveGraphToPNG("*PROVIDE PATH TO SAVE AS PNG FILE*");
+```
+
+- Find a path from one node to another using BFS, DFS or Random Walk algorithm
+```java
+Path bfs = gh.graphSearchWithAlgo("Google", "Meta", Algorithm.BFS);
+Path dfs = gh.graphSearchWithAlgo("Google", "Tesla", Algorithm.DFS);
+Path rws = gh.graphSearchWithAlgo("a","c", Algorithm.RANDOMWALK);
+```
+
+- The ```buildPath()``` method in ```Path``` class will print the path in the format ```a -> b -> c```
+- If no path if found, the ```graphSearchWithAlgo``` API returns ```null```, so we need to check if the returned path is not null
+- This is done using Template design pattern in GraphSearchTemplate
+```java
+boolean found = search(graph, src, dst, visited);
+if (found) {
+    System.out.println(path.buildPath(dst));
+    return path;
+} else {
+    System.out.println("No Path found");
+    return null;
+}
+```
